@@ -7,6 +7,7 @@
     <meta property="og:title" content="Gold Time Jerusalem - Orchestration Média Luxe">
     <meta property="og:description" content="60 שנה של מסורת בקינג ג'ורג' עוברים מהפכה דיגיטלית. קולקציית פסח עכשיו אונליין.">
     <title>Gold Time Jerusalem — אסטרטגיית מעבר לדיגיטל | DreamNova Consult</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A1128'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='serif' font-size='22' font-weight='bold' fill='%23D4AF37'%3EG%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -396,7 +397,7 @@
             border: 1px solid rgba(212,175,55,0.3);
             background: #0a0a0a;
         }
-        .shapeshift-container .shape-shift-item { opacity: 0; }
+        .shapeshift-container .shape-shift-item { opacity: 0; object-position: top center; }
         .shapeshift-container .shape-shift-item.active { opacity: 1; }
 
         /* STRATEGY CARDS — STITCH DARK PREMIUM */
@@ -527,6 +528,35 @@
             .strategy-grid { grid-template-columns: 1fr; }
             .strategy-card { padding: 1.5rem; }
             .shapeshift-section h2 { font-size: 1.8rem; }
+
+            /* Fix: shapeshift prototype container — taller on mobile */
+            .shapeshift-container {
+                aspect-ratio: 9/16;
+                max-width: 85%;
+                margin: 1rem auto;
+            }
+
+            /* Fix: glass-overlay padding on small screens */
+            .glass-overlay {
+                padding: 1.5rem;
+                margin: 0 0.5rem;
+            }
+        }
+
+        /* Safety net: force reveal visible after 3s in case IntersectionObserver fails */
+        @media (max-width: 768px) {
+            .reveal {
+                animation: revealFallback 0s 3s forwards;
+            }
+            .reveal.visible {
+                animation: none;
+            }
+            @keyframes revealFallback {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         }
     </style>
 </head>
@@ -764,12 +794,10 @@
     <div class="content-overlay container">
         <h2 class="shimmer-gold" style="font-size: 2.5rem;">Website Evolution</h2>
         <p class="section-sub">תיעוד התפתחות הפרויקט — מהצעת הקטלוג ועד לגרסת ה-E-Commerce</p>
-        <div class="shape-shift-bg shapeshift-container">
-            <img loading="lazy" src="stitch/stitch/screen.png" class="shape-shift-item active" alt="Prototype 0">
-            <img loading="lazy" src="stitch/stitch (1)/screen.png" class="shape-shift-item" alt="Prototype 1">
-            <img loading="lazy" src="stitch/stitch (2)/screen.png" class="shape-shift-item" alt="Prototype 2">
-            <img loading="lazy" src="stitch/stitch (3)/screen.png" class="shape-shift-item" alt="Prototype 3">
-            <img loading="lazy" src="stitch/stitch (4)/screen.png" class="shape-shift-item" alt="Prototype 4">
+        <div class="shapeshift-container" style="position:relative; overflow:hidden;">
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                <source src="flow images and videos/pessah flow/Drone_flying_into_202603191711.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 </section>
@@ -902,7 +930,7 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
         revealElements.forEach(el => revealObserver.observe(el));
     });
