@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600&amp;family=Heebo:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#131313",
+              "on-secondary-fixed": "#00174a",
+              "surface-bright": "#3a3939",
+              "surface-variant": "#353534",
+              "secondary-fixed": "#dbe1ff",
+              "inverse-on-surface": "#313030",
+              "surface-container-highest": "#353534",
+              "on-tertiary-container": "#444546",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-secondary": "#0d2c6e",
+              "surface-container": "#201f1f",
+              "on-background": "#e5e2e1",
+              "background": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "inverse-primary": "#735c00",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary": "#2f3131",
+              "surface-dim": "#131313",
+              "on-surface": "#e5e2e1",
+              "outline": "#99907c",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-secondary-fixed-variant": "#2a4386",
+              "secondary": "#b3c5ff",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed-dim": "#b3c5ff",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#e2e2e2",
+              "primary-fixed-dim": "#e9c349",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#574500",
+              "surface-tint": "#e9c349",
+              "on-secondary-container": "#9bb3fd",
+              "outline-variant": "#4d4635",
+              "primary-container": "#d4af37",
+              "on-surface-variant": "#d0c5af",
+              "on-primary-fixed": "#241a00",
+              "primary": "#f2ca50",
+              "tertiary": "#cecece",
+              "on-primary-container": "#554300",
+              "secondary-container": "#2a4386",
+              "error": "#ffb4ab",
+              "primary-fixed": "#ffe088",
+              "tertiary-container": "#b2b3b3",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-primary": "#3c2f00",
+              "inverse-surface": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Cinzel", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Heebo", "sans-serif"],
+              "serif": ["Noto Serif", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+      .shimmer-text {
+        background: linear-gradient(to right, #F2CA50 20%, #FFE088 40%, #FFE088 60%, #F2CA50 80%);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .gold-glow {
+        box-shadow: 0 0 20px rgba(242, 202, 80, 0.15);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(53, 53, 52, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #131313; }
+      ::-webkit-scrollbar-thumb { background: #4d4635; }
+      .drape-card {
+        @apply relative border-l border-primary/20 pl-8 py-12 transition-all duration-700;
+      }
+      .drape-card::before {
+        content: '';
+        @apply absolute left-0 top-0 h-0 w-[1px] bg-primary transition-all duration-700;
+      }
+      .drape-card:hover::before {
+        @apply h-full;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/40 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 w-full">
+<div class="text-2xl font-serif text-yellow-500 tracking-tighter">GOLD TIME</div>
+<div class="hidden md:flex gap-10 font-serif tracking-widest uppercase text-xs items-center">
+<a class="text-yellow-500 border-b border-yellow-500/30 pb-1" href="#">Necklaces</a>
+<a class="text-neutral-400 hover:text-white transition-colors hover:text-yellow-400 transition-all duration-500" href="#">Advisory</a>
+<a class="text-neutral-400 hover:text-white transition-colors hover:text-yellow-400 transition-all duration-500" href="#">Market Intel</a>
+<a class="text-neutral-400 hover:text-white transition-colors hover:text-yellow-400 transition-all duration-500" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-4 text-yellow-500">
+<span class="font-serif tracking-widest uppercase text-xs cursor-pointer hover:text-yellow-400">Language</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-95 transition-transform">language</span>
+</div>
+</nav>
+<main>
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-surface z-10"></div>
+<img alt="Dramatic close-up of a diamond and gold statement necklace on a dark velvet silhouette" class="w-full h-full object-cover opacity-70 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZTO6aUHA4lsxpK6aRbGLRNKZg14NA6lWOmJiPGrv-VAyWNkJwiNqgTBDKiule9Frw73OWGTl2j8PbSKLL0oC4i4hUCudSSu3-3pVlyRtJkcuRQLXOke6r8_dfdnDbh83QTCYk8o09B_jIpFiXClJwSpbZ_XADRyn2IiG-wMq653OZF8WKwrDpYVHHr9htmBPfCWUe-yRtQHlURYYuBBl906FDz7z8CgFRbQXxyBy3Ib_p8n-OcSTlQxO7oEOyXjMoVChpOLT5pVak"/>
+</div>
+<div class="relative z-20 text-center px-4">
+<p class="font-label text-primary uppercase tracking-[0.3em] mb-4 text-xs md:text-sm">Jerusalem Haute Joaillerie</p>
+<h1 class="font-headline text-6xl md:text-9xl font-black shimmer-text tracking-tighter mb-8">GOLD TIME</h1>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 mt-12">
+<div class="text-right" dir="rtl">
+<p class="font-serif italic text-2xl md:text-4xl text-on-surface/90">עיצוב עוצר נשימה, יוקרה נצחית</p>
+<p class="font-label text-[10px] text-outline mt-2 tracking-widest uppercase">L'Art du Collier de Prestige</p>
+</div>
+<div class="h-24 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="text-left">
+<p class="font-serif italic text-2xl md:text-4xl text-on-surface/90">L'élégance à fleur de peau</p>
+<p class="font-label text-[10px] text-outline mt-2 tracking-widest uppercase">Rare Jewels. Digital Precision. 2026.</p>
+</div>
+</div>
+<div class="mt-16">
+<button class="bg-gradient-to-tr from-primary to-primary-container text-on-primary px-10 py-4 font-label font-bold uppercase tracking-widest gold-glow hover:brightness-110 transition-all active:scale-95 rounded-none">
+                    Start the Blitz Now
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary/40 animate-bounce">
+<span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-4">
+<div>
+<span class="font-label text-primary text-xs uppercase tracking-[.25em]">Jewelry Portfolio Analytics</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mt-2">Market Intel</h2>
+</div>
+<p class="font-body text-outline max-w-md text-sm leading-relaxed">
+                    Decoding the global demand for high-carat neckwear. Our proprietary engine tracks rarity, craftsmanship, and provenance across elite auction houses.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-12">
+<div class="drape-card">
+<h3 class="font-headline text-xl mb-6">Asset Valuation</h3>
+<div class="space-y-6">
+<div class="text-primary">
+<span class="text-5xl font-light">+18.2%</span>
+<p class="text-[10px] uppercase tracking-widest mt-2 font-bold">Natural Diamond Riviera Index</p>
+</div>
+<div class="text-on-surface/60">
+<span class="text-3xl font-light">+6.5%</span>
+<p class="text-[10px] uppercase tracking-widest mt-2">Art Deco Choker Classics</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-12 pt-16 md:pt-32">
+<div class="drape-card bg-surface-container/30 px-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">diamond</span>
+<h3 class="font-headline text-2xl mb-4 italic">Predictive Craft</h3>
+<p class="text-sm text-outline leading-loose">
+                            Identify the next surge in rare colored gemstone necklaces. We blend 60 years of Jerusalem artisan secrets with 2026 liquidity forecasting.
+                        </p>
+</div>
+</div>
+<div class="flex flex-col gap-12">
+<div class="drape-card">
+<h4 class="font-label text-xs uppercase tracking-widest text-primary mb-6">Historical Scarcity</h4>
+<p class="font-serif text-xl leading-relaxed italic mb-8">
+                            "A necklace is the ultimate signature of power. We ensure yours speaks volumes."
+                        </p>
+<div class="bg-surface-container-high p-6 border border-primary/10">
+<h3 class="font-headline text-lg mb-2">Provenance Check</h3>
+<p class="text-xs text-outline">Each piece is verified by our master gemologists and assigned a 2026 cryptographic authenticity certificate.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 md:px-24 bg-surface relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-24">
+<span class="font-label text-primary text-xs uppercase tracking-[0.4em]">Curated Heritage Campaign</span>
+<h2 class="font-headline text-5xl md:text-7xl mt-4 mb-6 italic text-yellow-500/90">Blitz Passover</h2>
+<div class="w-24 h-[1px] bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<div class="group relative flex flex-col items-center text-center p-12 border-x border-outline-variant/10 hover:bg-surface-container-high transition-all duration-500">
+<div class="w-12 h-12 flex items-center justify-center mb-10 border border-primary/30 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">auto_awesome_motion</span>
+</div>
+<h3 class="font-headline text-xl mb-6 uppercase tracking-[0.2em]">The Grand Gala</h3>
+<p class="text-sm text-outline leading-relaxed max-w-xs">
+                        Bespoke landing experiences designed to highlight the movement and luster of statement colliers.
+                    </p>
+<div class="absolute bottom-0 w-[1px] h-20 bg-gradient-to-t from-primary/50 to-transparent"></div>
+</div>
+<div class="group relative flex flex-col items-center text-center p-12 border-x border-outline-variant/10 hover:bg-surface-container-high transition-all duration-500 md:-translate-y-8">
+<div class="w-12 h-12 flex items-center justify-center mb-10 border border-primary/30 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">flare</span>
+</div>
+<h3 class="font-headline text-xl mb-6 uppercase tracking-[0.2em]">Luminous Social</h3>
+<p class="text-sm text-outline leading-relaxed max-w-xs">
+                        Viral narratives that capture the dance of light on precious stones, targeted for the 2026 digital elite.
+                    </p>
+<div class="absolute bottom-0 w-[1px] h-32 bg-gradient-to-t from-primary/50 to-transparent"></div>
+</div>
+<div class="group relative flex flex-col items-center text-center p-12 border-x border-outline-variant/10 hover:bg-surface-container-high transition-all duration-500">
+<div class="w-12 h-12 flex items-center justify-center mb-10 border border-primary/30 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">hub</span>
+</div>
+<h3 class="font-headline text-xl mb-6 uppercase tracking-[0.2em]">Prestige Flow</h3>
+<p class="text-sm text-outline leading-relaxed max-w-xs">
+                        Optimizing the digital path from inspiration to acquisition for the world's most significant jewelry collections.
+                    </p>
+<div class="absolute bottom-0 w-[1px] h-20 bg-gradient-to-t from-primary/50 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest">
+<div class="max-w-5xl mx-auto glass-panel border border-primary/20 overflow-hidden">
+<div class="bg-primary/10 px-8 py-4 border-b border-primary/20 flex justify-between items-center">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary/40"></div>
+<div class="w-3 h-3 rounded-full bg-on-tertiary-container/40"></div>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">Jewelry Intelligence System v.2.6</span>
+</div>
+<div class="p-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline text-3xl mb-6">The Curator AI</h2>
+<p class="text-outline text-sm leading-relaxed mb-8">
+                            Audit your high-jewelry assets against six decades of heritage data. Our neural network identifies "Grail" necklaces before they hit the open market.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-label text-xs uppercase tracking-widest">Gemstone Purity Mapping</span>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label text-xs uppercase tracking-widest">Global Auction Trend Sync</span>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-label text-xs uppercase tracking-widest">Heirloom Equity Projections</span>
+</div>
+</div>
+</div>
+<div class="bg-black/40 p-6 font-mono text-xs border border-outline-variant/30 relative">
+<div class="absolute top-4 right-4 animate-pulse w-2 h-2 bg-primary rounded-full"></div>
+<p class="text-primary/70 mb-2">&gt;&gt; SCANNING_COLLECTION_DB...</p>
+<p class="text-on-surface/90 mb-2">Analyzing: Diamond_Clarity_Jerusalem_1964.db</p>
+<p class="text-on-surface/90 mb-2">Cross_Referencing: Christie's_Sotheby's_2026.api</p>
+<p class="text-primary mb-4">RECOMMENDATION: 24CT_YELLOW_DIAMOND_COLLIER</p>
+<div class="h-[1px] bg-outline-variant/30 mb-4"></div>
+<div class="space-y-2">
+<div class="flex justify-between">
+<span class="text-outline">RARITY_COEFFICIENT:</span>
+<span class="text-on-surface">AAA+</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">APPRECIATION_POTENTIAL:</span>
+<span class="text-on-surface">OPTIMAL</span>
+</div>
+</div>
+<button class="w-full mt-6 border border-primary text-primary py-2 uppercase tracking-tighter hover:bg-primary hover:text-surface transition-all">
+                            Request Portfolio Audit
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-40 px-6 text-center">
+<h2 class="font-headline text-4xl md:text-6xl mb-8">A Legacy Carved in Gold.</h2>
+<p class="font-serif italic text-2xl text-primary mb-12">Building the future of high-end necklaces.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="px-12 py-5 bg-white text-surface font-label font-bold uppercase tracking-widest hover:bg-primary transition-colors">
+                Acquire the Statement
+            </button>
+<button class="px-12 py-5 border border-outline-variant text-on-surface font-label font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">
+                The Heritage Dossier
+            </button>
+</div>
+</section>
+</main>
+<footer class="bg-neutral-950 border-t border-white/5 flex flex-col items-center py-20 px-8 gap-8">
+<div class="font-serif italic text-lg text-white">GOLD TIME Jerusalem • Since 1964</div>
+<div class="flex flex-wrap justify-center gap-12 font-sans text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+<a class="hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-white transition-opacity" href="#">Bespoke Commissions</a>
+<a class="hover:text-white transition-opacity" href="#">Contact</a>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-neutral-500 hover:text-yellow-500 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-neutral-500 hover:text-yellow-500 cursor-pointer">retweet</span>
+<span class="material-symbols-outlined text-neutral-500 hover:text-yellow-500 cursor-pointer">link</span>
+</div>
+<p class="font-sans text-[10px] uppercase tracking-[0.2em] text-neutral-600">© 2024 GOLD TIME JERUSALEM. All Rights Reserved.</p>
+</footer>
+
+</body></html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="flow images and videos/_Sublime_this_picture_202603191608.jpeg">
+    <meta property="og:title" content="Gold Time Jerusalem - Orchestration Média Luxe">
+    <meta property="og:description" content="60 שנה של מסורת בקינג ג'ורג' עוברים מהפכה דיגיטלית. קולקציית פסח עכשיו אונליין.">
+    <title>Gold Time Jerusalem — אסטרטגיית מעבר לדיגיטל | DreamNova Consult</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F5E6B8;
+            --gold-dark: #B8941F;
+            --navy: #0A1128;
+            --dark: #1a1a2e;
+            --white: #FFFFFF;
+            --cream: #FDFBF7;
+            --grey: #6B7280;
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Heebo', 'Inter', sans-serif;
+            background: #050505;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* FIXED NAVIGATION BAR */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+        .main-nav.scrolled {
+            background: rgba(10, 17, 40, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0.7rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255,255,255,0.2);
+        }
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        @media (max-width: 768px) {
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(5, 5, 5, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.4s;
+            }
+            .nav-links.open {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .nav-links a { font-size: 1.2rem; }
+            .nav-logo { font-size: 1.2rem; }
+            .nav-divider { display: none; }
+        }
+
+        /* GOLD SHIMMER ANIMATION */
+        @keyframes gold-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-gold {
+            background: linear-gradient(90deg, #B8941F, #F5E6B8, #D4AF37, #F5E6B8, #B8941F);
+            background-size: 200% auto;
+            animation: gold-shimmer 4s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* GOLD DIVIDER */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* SHAPE SHIFTING CORE */
+        .shape-shift-bg { position: relative; overflow: hidden; }
+        .shape-shift-item {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .content-overlay { position: relative; z-index: 10; width: 100%; }
+        
+        /* READABILITY OVERLAY */
+        .glass-overlay {
+            background: rgba(10, 17, 40, 0.45);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+        }
+        .hero .shape-shift-item { opacity: 0; filter: grayscale(10%); }
+        .hero .shape-shift-item.active { opacity: 0.3; filter: grayscale(10%); }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,17,40,0.85) 0%, rgba(26,26,46,0.7) 100%);
+            z-index: 1; /* Above shapes but below content */
+        }
+        .hero-content {
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        .hero-cta:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.3); }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; position: relative; z-index: 10; }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--grey);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        /* ANALYSIS SECTION */
+        .analysis {
+            background: #080808;
+            color: var(--white);
+        }
+        .analysis .shape-shift-item { opacity: 0; }
+        .analysis .shape-shift-item.active { opacity: 0.2; }
+        .analysis h2 { color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .analysis .section-sub { color: rgba(255,255,255,0.8); }
+
+        /* EXPERIENCE SECTION — DARK PREMIUM */
+        .experience { background: #0a0a0e; }
+        .experience-text h2 { color: var(--gold) !important; }
+        .experience-text p { color: rgba(255,255,255,0.8) !important; }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .experience-text h2 { text-align: right; margin-bottom: 1.5rem; }
+        .experience-text p { font-size: 1.1rem; line-height: 1.8; color: var(--dark); margin-bottom: 1rem; }
+        .experience-glass {
+            position: relative;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            aspect-ratio: 9/16;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .experience-glass video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        /* PORTFOLIO MASONRY SECTION — DARK + VIDEO BG */
+        .portfolio { background: #080808; color: var(--white); padding: 5rem 2rem; }
+        .portfolio .shape-shift-item { opacity: 0; }
+        .portfolio .shape-shift-item.active { opacity: 0.12; }
+        .portfolio h2 { color: var(--gold); }
+        .portfolio-masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 300px;
+            grid-auto-flow: dense;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050510;
+            border: 1px solid rgba(212,175,55,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .portfolio-item.large { grid-column: span 2; grid-row: span 2; }
+        .portfolio-item.tall { grid-row: span 2; }
+        .portfolio-item.wide { grid-column: span 2; }
+        
+        @media (max-width: 768px) {
+            .portfolio-item.large, .portfolio-item.wide { grid-column: span 1; }
+        }
+
+        .portfolio-item img, .portfolio-item video {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;
+        }
+        .portfolio-item:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.8); border-color: rgba(212,175,55,0.5); }
+        .portfolio-item:hover img, .portfolio-item:hover video { transform: scale(1.05); }
+        .portfolio-badge {
+            position: absolute;
+            bottom: 12px; left: 12px;
+            background: rgba(10, 17, 40, 0.85);
+            backdrop-filter: blur(5px);
+            color: var(--white);
+            border-left: 3px solid var(--gold);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        /* STITCH PROTOTYPES — DARK WITH VIDEO BG */
+        .shapeshift-section {
+            background: #050505;
+            color: var(--white);
+            text-align: center;
+        }
+        .shapeshift-section .shape-shift-item { opacity: 0; }
+        .shapeshift-section .shape-shift-item.active { opacity: 0.15; }
+        .shapeshift-section h2 { color: var(--gold); font-size: 2.5rem; }
+        .shapeshift-section .section-sub { color: rgba(255,255,255,0.5); }
+        .shapeshift-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 40px rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            background: #0a0a0a;
+        }
+        .shapeshift-container .shape-shift-item { opacity: 0; }
+        .shapeshift-container .shape-shift-item.active { opacity: 1; }
+
+        /* STRATEGY CARDS — STITCH DARK PREMIUM */
+        .strategy { background: #050505; color: var(--white); }
+        .strategy h2 { color: var(--gold); }
+        .strategy .section-sub { color: rgba(255,255,255,0.6); }
+        .strategy .shape-shift-item { opacity: 0; }
+        .strategy .shape-shift-item.active { opacity: 0.15; }
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .strategy-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-top: 3px solid var(--gold);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .strategy-card:hover { border-color: rgba(212,175,55,0.5); transform: translateY(-3px); }
+        .strategy-card h3 {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .strategy-card p { font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+        .strategy-card ul { list-style: none; padding-right: 1rem; margin-top: 1rem; }
+        .strategy-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+            position: relative;
+            color: rgba(255,255,255,0.75);
+        }
+        .strategy-card ul li::before {
+            content: '✦';
+            color: var(--gold);
+            position: absolute;
+            right: -1rem;
+            font-size: 0.7rem;
+        }
+        .highlight-box {
+            background: rgba(212,175,55,0.08);
+            border-right: 3px solid var(--gold);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+        }
+        .highlight-box strong { color: var(--gold); }
+        .strategy-metric {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .timeline-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.15);
+            border: 1px solid rgba(212,175,55,0.3);
+            color: var(--gold);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            font-size: 0.85rem;
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        .footer-nav a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer-nav a:hover { color: var(--gold); }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+            max-width: 200px;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 3rem 1.5rem; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .experience-text h2 { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- FIXED NAVIGATION BAR -->
+<nav class="main-nav" id="mainNav">
+    <a href="#" class="nav-logo">Gold Time</a>
+    <div class="nav-hamburger" id="navHamburger" onclick="this.classList.toggle('active'); document.getElementById('navLinks').classList.toggle('open');">
+        <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#analysis">אנליזה</a></li>
+        <li><a href="#portfolio">פורטפוליו</a></li>
+        <li><a href="#strategy">אסטרטגיה</a></li>
+        <li><div class="nav-divider"></div></li>
+        <li><a href="pricing_dreamnova.html">תמחור</a></li>
+        <li><a href="pessah_collection.html">קולקציית פסח</a></li>
+    </ul>
+</nav>
+
+<!-- HERO: Shape Shifting Background -->
+<section class="hero shape-shift-bg">
+    <!-- Image/Video Backgrounds for Hero -->
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_and_202603191612.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Luxury Watch Image">
+    <video class="shape-shift-item" autoplay muted loop playsinline>
+        <source src="flow images and videos/Watch_mechanism_and_202603191612.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="content-overlay hero-content">
+        <div class="glass-overlay">
+            <div class="hero-badge">הצעת אסטרטגיה — DreamNova</div>
+            <h1>תהליך מעבר לדיגיטל<br><span class="shimmer-gold">Gold Time Jerusalem</span></h1>
+            <p>סקירה מסחרית ואסטרטגית: משלב הקטלוג בחודשים הראשונים ועד לחנות e-commerce פעילה לקראת חודש אלול.</p>
+            <a href="#strategy" class="hero-cta">לתוכנית המלאה ←</a>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" onclick="document.getElementById('analysis').scrollIntoView({behavior:'smooth'})">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+        </svg>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ANALYSIS (Market Intel): Shape Shifting Background -->
+<section class="analysis shape-shift-bg" id="analysis">
+    <!-- Analysis Backgrounds -->
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_mechanism_202603191615.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/Luxury_watch_mechanism_202603191614.jpeg" class="shape-shift-item" alt="Mechanism Analysis">
+
+    <div class="content-overlay container">
+        <div class="glass-overlay reveal">
+            <h2>Market Intel & אנליזה</h2>
+            <p class="section-sub" style="color: rgba(255,255,255,0.9);">הבנת מנגנון השוק העדכני</p>
+            <p style="text-align:center; font-size:1.1rem; line-height:1.7;">
+                שוק שעוני היוקרה בישראל עובר מהפכה של קניות מקוונות וחוויית לקוח 360 מעלות. אנו בונים מעטפת דיגיטלית שמשקפת בדיוק את המסורת ואת הדיוק שאתם מציגים ללקוחות בחנות הפיזית למעלה מ-60 שנה.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- EXPERIENCE: Nouveaux Bloc (Client Welcome) -->
+<section class="experience" id="experience">
+    <div class="container">
+        <div class="experience-grid reveal">
+            <div class="experience-text">
+                <h2>חוויית לקוח — מהרחוב אל המסך</h2>
+                <p>כאשר לקוח נכנס לחנות שלכם בקינג ג'ורג', הוא מרגיש את האווירה, את ההיסטוריה ואת המומחיות.</p>
+                <p>האתגר שלנו הוא להעביר את הרושם הזה באונליין. באמצעות סרטונים באיכות גבוהה שיוכנו ל-TikTok ול-Instagram Reels, אנו ניצור מסע דיגיטלי שמרגיש אישי ויוקרתי בדיוק כמו החנות הפיזית.</p>
+            </div>
+            <div class="experience-glass">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Man_entering_store_202603191611.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- PORTFOLIO: VISUAL COMPILATION — WITH VIDEO BG -->
+<section class="portfolio shape-shift-bg" id="portfolio">
+    <!-- Shape-shifting video backgrounds at 12% -->
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/pessah flow/Drone_flying_into_202603191711.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/pessah flow/Create_a_premium_202603191713 (1).jpeg" class="shape-shift-item" alt="Premium Creation">
+    <video class="shape-shift-item" autoplay muted loop playsinline>
+        <source src="flow images and videos/pessah flow/Jewelry_video_for_202603191718.mp4" type="video/mp4">
+    </video>
+
+    <div class="container" style="max-width: 1200px;">
+        <h2>Portfolio Visuel & Multimédia</h2>
+        <p class="section-sub">אוסף נכסים דיגיטליים לרשתות החברתיות (TikTok & Meta)</p>
+        
+        <div class="portfolio-masonry reveal">
+
+            <!-- TikTok Concept -->
+            <div class="portfolio-item tall">
+                <img src="flow images and videos/pour tiktok example.jpeg" alt="TikTok Concept">
+                <div class="portfolio-badge">TikTok Creator Concept</div>
+            </div>
+
+            <!-- UI Interaction Engagement -->
+            <div class="portfolio-item">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/social media portfolio hebrew/User_clicks_and_202603191629.mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Story Engagement (HE)</div>
+            </div>
+
+            <!-- Store Experience B-Roll -->
+            <div class="portfolio-item wide">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Man_entering_store_202603191610.mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Premium Experience (B-Roll)</div>
+            </div>
+
+            <!-- FB Advertisement (Hebrew) -->
+            <div class="portfolio-item large">
+                <img src="flow images and videos/social media portfolio hebrew/Luxury_jewelry_advertisement_202603191622.jpeg" alt="FB Ad Hebrew">
+                <div class="portfolio-badge">Meta Campaign (Hebrew Ad)</div>
+            </div>
+
+            <!-- Elegant Mechanism Detail -->
+            <div class="portfolio-item">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Luxury_watch_and_202603191611.mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Product Detail</div>
+            </div>
+
+            <!-- Watch Internal JPEG -->
+            <div class="portfolio-item">
+                <img src="flow images and videos/Watch_with_internal_202603191618.jpeg" alt="Watch Internals">
+                <div class="portfolio-badge">Mechanics Details</div>
+            </div>
+
+            <!-- English Portfolio #1 -->
+            <div class="portfolio-item">
+                <img src="flow images and videos/social media english portfolio/Gold_Time_jewelry_202603191621.jpeg" alt="English Portfolio 1">
+                <div class="portfolio-badge">English Market Ad 1</div>
+            </div>
+
+            <!-- English Portfolio #2 -->
+            <div class="portfolio-item tall">
+                <img src="flow images and videos/social media english portfolio/Gold_Time_jewelry_202603191622 (1).jpeg" alt="English Portfolio 2">
+                <div class="portfolio-badge">English Market Ad 2</div>
+            </div>
+
+            <!-- English Portfolio #3 -->
+            <div class="portfolio-item">
+                <img src="flow images and videos/social media english portfolio/Gold_Time_jewelry_202603191622.jpeg" alt="English Portfolio 3">
+                <div class="portfolio-badge">English Market Ad 3</div>
+            </div>
+
+            <!-- French Portfolio -->
+            <div class="portfolio-item tall">
+                <img src="flow images and videos/social media francais portfolio/Luxury_jewelry_advertisement_202603191625.jpeg" alt="French Ad">
+                <div class="portfolio-badge">French Tourist Content</div>
+            </div>
+
+            <!-- Additional Videos / UI Actions -->
+            <div class="portfolio-item wide">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/social media portfolio hebrew/User_clicks_and_202603191629 (1).mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">App Interaction Flow</div>
+            </div>
+
+            <div class="portfolio-item">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Luxury_watch_and_202603191615 (1).mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Watch Flow 1</div>
+            </div>
+
+            <div class="portfolio-item">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Luxury_watch_and_202603191615.mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Watch Flow 2</div>
+            </div>
+
+            <div class="portfolio-item">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/social media portfolio hebrew/User_clicks_and_202603191624.mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Shopping Cart Action</div>
+            </div>
+
+            <div class="portfolio-item wide">
+                <video autoplay muted loop playsinline>
+                    <source src="flow images and videos/Man_entering_store_202603191610 (1).mp4" type="video/mp4">
+                </video>
+                <div class="portfolio-badge">Store Lifestyle</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- SHAPE SHIFTING (PROTOTYPES) — WITH VIDEO BACKGROUND -->
+<section class="shapeshift-section shape-shift-bg">
+    <!-- Video backgrounds at 15% opacity -->
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/pessah flow/Gold_luxury_watch_202603191710.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/pessah flow/Create_a_premium_202603191713.jpeg" class="shape-shift-item" alt="Premium Jewelry">
+    <video class="shape-shift-item" autoplay muted loop playsinline>
+        <source src="flow images and videos/pessah flow/Diamond_necklace_on_202603191710.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/pessah flow/Luxury_watch_Passover_202603191713.jpeg" class="shape-shift-item" alt="Passover Watch">
+
+    <div class="content-overlay container">
+        <h2 class="shimmer-gold" style="font-size: 2.5rem;">Website Evolution</h2>
+        <p class="section-sub">תיעוד התפתחות הפרויקט — מהצעת הקטלוג ועד לגרסת ה-E-Commerce</p>
+        <div class="shape-shift-bg shapeshift-container">
+            <img src="stitch/stitch/screen.png" class="shape-shift-item active" alt="Prototype 0">
+            <img src="stitch/stitch (1)/screen.png" class="shape-shift-item" alt="Prototype 1">
+            <img src="stitch/stitch (2)/screen.png" class="shape-shift-item" alt="Prototype 2">
+            <img src="stitch/stitch (3)/screen.png" class="shape-shift-item" alt="Prototype 3">
+            <img src="stitch/stitch (4)/screen.png" class="shape-shift-item" alt="Prototype 4">
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- STRATEGY — DARK PREMIUM WITH VIDEO BG -->
+<section class="strategy shape-shift-bg" id="strategy">
+    <!-- Shape-shifting video backgrounds at 15% -->
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_and_202603191615.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Watch Detail">
+    <video class="shape-shift-item" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_and_202603191615 (1).mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/Luxury_watch_mechanism_202603191614.jpeg" class="shape-shift-item" alt="Mechanism">
+
+    <div class="content-overlay container">
+        <h2 class="shimmer-gold">Digital Transformation Strategy</h2>
+        <p class="section-sub">תוכנית אסטרטגית מותאמת אישית — שני שלבים, יעדים מדידים</p>
+
+        <div class="strategy-grid">
+            <div class="strategy-card reveal">
+                <div class="timeline-badge">אפריל — ספטמבר 2026</div>
+                <h3>שלב 1: רכישה ויוקרה</h3>
+                <p><strong style="color:var(--gold);">יעד:</strong> החלפת 200 לקוחות שאבדו + פנייה לדור חדש (גילאי 18-35).</p>
+                <p style="margin-top:1rem;">הקצאת תקציב פרסום:</p>
+                <ul>
+                    <li><strong>טיקטוק <span class="strategy-metric">(600 ₪ — 66%)</span>:</strong> קמפיינים וידאו קולנועיים (Google Flow). קהל יעד: ירושלים 20-40.</li>
+                    <li><strong>פייסבוק/אינסטגרם <span class="strategy-metric">(300 ₪ — 33%)</span>:</strong> קטלוג + קהל היסטורי + תיירים (עולים).</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>תחזית המרות:</strong><br>
+                    <span class="strategy-metric">800–1,200</span> ביקורים / חודש<br>
+                    <span class="strategy-metric">15–25</span> פניות (וואטסאפ/טלפון)<br>
+                    סגירה בחנות (30%): <span class="strategy-metric">5–8</span> מכירות יוקרה חודשיות<br>
+                    <span class="strategy-metric">ROI x4–x6</span> כבר בחודש השלישי
+                </div>
+            </div>
+
+            <div class="strategy-card reveal">
+                <div class="timeline-badge">אלול / ספטמבר 2026</div>
+                <h3>שלב 2: שדרוג E-Commerce</h3>
+                <p><strong style="color:var(--gold);">יעד:</strong> הפיכת התנועה להכנסות אוטומטיות 24/7 לראש השנה.</p>
+                <ul>
+                    <li><strong>היערכות (אוגוסט):</strong> פיתוח מערכת הזמנות, סל קניות וסליקה מאובטחת.</li>
+                    <li><strong>מלאי הוליסטי:</strong> סנכרון מלאי פיזי בין סניפי קינג ג'ורג' למלחה.</li>
+                    <li><strong>השקה (אלול):</strong> קמפיין "העניקו נצח לקראת השנה החדשה".</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>תחזית לאחר רפורמה:</strong><br>
+                    <span class="strategy-metric">10–15%</span> מסך מכירות החנות עוברות דרך האונליין<br>
+                    חיסכון: <span class="strategy-metric">~10 שעות/שבוע</span> ממענה שוטף על מחירים
+                </div>
+            </div>
+
+            <div class="strategy-card reveal" style="grid-column: 1 / -1;">
+                <h3>המלצות מומחה — David Amor</h3>
+                <p>שני צעדים אסטרטגיים רציפים לחיזוק הצמיחה הדיגיטלית:</p>
+                <ul>
+                    <li><strong>קידום אורגני שוטף:</strong> העלאת <span class="strategy-metric">2 סרטונים/שבוע</span> לטיקטוק. DreamNova AI תייצר תכנים ברמת "Luxury Editorial" אחידה.</li>
+                    <li><strong>איסוף דאטה ("חימום הקהל"):</strong> התקנת פיקסל של מטא וטיקטוק <span class="strategy-metric">מהיום הראשון</span> כדי לבנות קהלים לפני ההשקה הגדולה באלול.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 60 YEARS HERITAGE — STITCH STYLE -->
+<section style="background: #050505; padding: 6rem 2rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.15);">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 class="shimmer-gold" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">60 Years of Heritage.</h2>
+        <p style="color: var(--gold); font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2.5rem;">Built for the Digital Renaissance</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <a href="pricing_dreamnova.html" style="display: inline-block; background: var(--gold); color: #050505; padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s;">צפו בתמחור המלא</a>
+            <a href="pessah_collection.html" style="display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s;">קולקציית פסח →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">Gold Time Jerusalem</div>
+        <ul class="footer-nav">
+            <li><a href="#analysis">אנליזה</a></li>
+            <li><a href="#portfolio">פורטפוליו</a></li>
+            <li><a href="#strategy">אסטרטגיה</a></li>
+            <li><a href="pricing_dreamnova.html">תמחור</a></li>
+            <li><a href="pessah_collection.html">קולקציית פסח</a></li>
+        </ul>
+        <div class="footer-divider"></div>
+        <p>© 2026 DreamNova Consult — Infrastructure AI & Transformation Digitale</p>
+    </div>
+</footer>
+
+<script>
+    // Universal Shape Shifting Logic pour toutes les zones
+    document.addEventListener("DOMContentLoaded", () => {
+        const shapeShiftZones = document.querySelectorAll('.shape-shift-bg');
+
+        shapeShiftZones.forEach(zone => {
+            const items = zone.querySelectorAll('.shape-shift-item');
+            if (items.length > 1) {
+                let currentIndex = 0;
+                setInterval(() => {
+                    items[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % items.length;
+                    items[currentIndex].classList.add('active');
+                }, 4000); // 4s delay + 2s cross-fade transition
+            }
+        });
+
+        // Fixed Nav — transparent to solid on scroll
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal — IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    });
+</script>
+
+</body>
+</html>

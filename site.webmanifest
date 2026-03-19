@@ -1,0 +1,16 @@
+{
+  "name": "Sagit Jewellery",
+  "short_name": "Sagit",
+  "description": "Haute Joaillerie Or 18 Carats - Créations d'Exception",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#FFD700",
+  "background_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

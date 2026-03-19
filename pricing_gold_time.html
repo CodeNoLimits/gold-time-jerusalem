@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Time Jerusalem — מחירון | Tarification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --dark-bg: #050505; }
+        body { font-family: 'Assistant', sans-serif; }
+        .font-serif { font-family: 'Cinzel', serif; }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .glass-card-featured {
+            background: rgba(212, 175, 55, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes gold-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer {
+            background: linear-gradient(90deg, #b8860b, #fcc200, #b8860b);
+            background-size: 200% auto;
+            animation: gold-shimmer 4s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        [lang="fr"] .lang-he { display: none !important; }
+        [lang="he"] .lang-fr { display: none !important; }
+
+        .price-row { border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        .price-row:last-child { border-bottom: none; }
+
+        .total-row {
+            background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05));
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+
+        .badge-pessah {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+        }
+
+        .value-tag {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#050505] text-gray-200">
+
+    <!-- LANG SWITCH -->
+    <div class="fixed top-6 left-6 z-50 flex gap-2">
+        <button onclick="setLang('he')" id="btn-he" class="px-4 py-2 border border-gold text-xs uppercase tracking-widest font-bold bg-gold text-black transition-all">HE</button>
+        <button onclick="setLang('fr')" id="btn-fr" class="px-4 py-2 border border-gold text-xs uppercase tracking-widest font-bold text-gold hover:bg-gold/10 transition-all">FR</button>
+    </div>
+
+    <!-- HEADER -->
+    <section class="pt-20 pb-16 px-6 text-center border-b border-gold/10">
+        <h1 class="font-serif text-5xl md:text-7xl shimmer font-bold tracking-widest uppercase mb-4">Gold Time</h1>
+        <p class="text-gold text-lg tracking-[0.3em] uppercase mb-6 lang-he">ירושלים — מאז 1966</p>
+        <p class="text-gold text-lg tracking-[0.3em] uppercase mb-6 lang-fr">Jérusalem — Depuis 1966</p>
+        <div class="h-px w-20 bg-gold mx-auto mb-8"></div>
+        <h2 class="text-2xl md:text-3xl font-bold text-white lang-he">תכנית טרנספורמציה דיגיטלית</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white lang-fr">Plan de Transformation Digitale</h2>
+        <p class="text-gray-500 mt-3 text-sm uppercase tracking-widest">DreamNova Consult — Mars 2026</p>
+    </section>
+
+    <!-- BLITZ PESSAH -->
+    <section class="py-16 px-6 lg:px-24 bg-gradient-to-b from-[#0a0000] to-[#050505]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="badge-pessah inline-block px-5 py-2 rounded-full text-white text-xs uppercase tracking-widest font-bold mb-6">
+                    <span class="lang-he">🔥 הזדמנות מיידית — 13 ימים לפסח</span>
+                    <span class="lang-fr">🔥 Opportunité Immédiate — 13 jours avant Pessah</span>
+                </span>
+                <h3 class="font-serif text-3xl md:text-4xl text-white uppercase tracking-wider mb-4">
+                    <span class="lang-he">מבצע "בליץ פסח"</span>
+                    <span class="lang-fr">Offre "Blitz Pessah"</span>
+                </h3>
+            </div>
+
+            <div class="p-px bg-gradient-to-r from-transparent via-gold to-transparent rounded-2xl">
+                <div class="bg-[#0a0a0a] p-10 rounded-2xl">
+                    <div class="space-y-5 mb-10">
+                        <div class="flex items-start gap-4 price-row pb-4">
+                            <svg class="w-5 h-5 text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <div>
+                                <span class="text-white font-semibold lang-he">דף נחיתה יוקרתי "קולקציית פסח"</span>
+                                <span class="text-white font-semibold lang-fr">Landing Page Premium "Collection Pessah"</span>
+                                <p class="text-gray-500 text-sm mt-1 lang-he">עיצוב מותאם אישית עם וידאו רקע AI</p>
+                                <p class="text-gray-500 text-sm mt-1 lang-fr">Design sur mesure avec vidéo de fond IA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 price-row pb-4">
+                            <svg class="w-5 h-5 text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <div>
+                                <span class="text-white font-semibold lang-he">2 פוסטים מקצועיים לרשתות חברתיות</span>
+                                <span class="text-white font-semibold lang-fr">2 Posts Professionnels Réseaux Sociaux</span>
+                                <p class="text-gray-500 text-sm mt-1 lang-he">פייסבוק (עברית + צרפתית) + טיקטוק (וידאו 15 שניות)</p>
+                                <p class="text-gray-500 text-sm mt-1 lang-fr">Facebook (HE + FR) + TikTok (Vidéo 15s)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 price-row pb-4">
+                            <svg class="w-5 h-5 text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <div>
+                                <span class="text-white font-semibold lang-he">קופירייטינג דו-לשוני + אסטרטגיית תוכן</span>
+                                <span class="text-white font-semibold lang-fr">Copywriting bilingue + Stratégie de contenu</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-6xl font-bold text-white font-serif italic mb-2">2,500 ₪</div>
+                        <div class="value-tag inline-block px-4 py-2 rounded-lg mt-4">
+                            <span class="text-gold text-sm font-semibold lang-he">✦ ניתן לקיזוז מלא מעלות ההקמה + החודש הראשון</span>
+                            <span class="text-gold text-sm font-semibold lang-fr">✦ Entièrement déductible du setup + premier mois</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SETUP ONE-TIME -->
+    <section class="py-16 px-6 lg:px-24 border-t border-gold/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-3xl text-white uppercase tracking-wider mb-3">
+                    <span class="lang-he">הקמה ראשונית</span>
+                    <span class="lang-fr">Configuration Initiale</span>
+                </h3>
+                <p class="text-gray-500 text-sm uppercase tracking-widest lang-he">תשלום חד-פעמי</p>
+                <p class="text-gray-500 text-sm uppercase tracking-widest lang-fr">Paiement unique</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PHOTO -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">📸</span>
+                        <div>
+                            <h4 class="text-white text-lg font-bold lang-he">צילום מקצועי בחנות</h4>
+                            <h4 class="text-white text-lg font-bold lang-fr">Séance Photo Professionnelle</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6 lang-he">צילום מוצרים, ויטרינה ואווירת חנות. תמונות ברמת מגזין לאתר ולרשתות החברתיות.</p>
+                    <p class="text-gray-400 text-sm mb-6 lang-fr">Photos produits, vitrine et ambiance boutique. Qualité magazine pour le site et les réseaux.</p>
+                    <div class="flex items-end gap-3">
+                        <span class="text-gray-600 line-through text-lg">3,000 ₪</span>
+                        <span class="text-3xl font-bold text-white">1,000 ₪</span>
+                    </div>
+                    <div class="value-tag inline-block px-3 py-1 rounded mt-3">
+                        <span class="text-gold text-xs font-semibold lang-he">חיסכון של 67%</span>
+                        <span class="text-gold text-xs font-semibold lang-fr">Économie de 67%</span>
+                    </div>
+                </div>
+
+                <!-- SITE -->
+                <div class="glass-card-featured p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full lang-he">עיקרי</div>
+                    <div class="absolute top-4 left-4 bg-gold text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full lang-fr">Principal</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">🌐</span>
+                        <div>
+                            <h4 class="text-white text-lg font-bold lang-he">אתר קטלוג יוקרתי</h4>
+                            <h4 class="text-white text-lg font-bold lang-fr">Site Catalogue Premium</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 lang-he">אתר ויטרינה מודרני ומרהיב עם קטלוג מוצרים מלא, תמיכה בעברית ואנגלית, מותאם לנייד ולתיירים.</p>
+                    <p class="text-gray-400 text-sm mb-4 lang-fr">Vitrine moderne avec catalogue complet, bilingue HE/EN, responsive mobile, optimisé touristes.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="text-gray-400 text-xs flex items-center gap-2">
+                            <span class="text-gold">✦</span>
+                            <span class="lang-he">קטלוג אינטראקטיבי עם כל המוצרים</span>
+                            <span class="lang-fr">Catalogue interactif complet</span>
+                        </li>
+                        <li class="text-gray-400 text-xs flex items-center gap-2">
+                            <span class="text-gold">✦</span>
+                            <span class="lang-he">עמוד "הסיפור שלנו" — 60 שנות מסורת</span>
+                            <span class="lang-fr">Page "Notre Histoire" — 60 ans</span>
+                        </li>
+                        <li class="text-gray-400 text-xs flex items-center gap-2">
+                            <span class="text-gold">✦</span>
+                            <span class="lang-he">SEO מקומי ל-Google Maps (2 סניפים)</span>
+                            <span class="lang-fr">SEO local Google Maps (2 boutiques)</span>
+                        </li>
+                        <li class="text-gray-400 text-xs flex items-center gap-2">
+                            <span class="text-gold">✦</span>
+                            <span class="lang-he">דומיין + אחסון שנה ראשונה כלול</span>
+                            <span class="lang-fr">Domaine + hébergement 1ère année inclus</span>
+                        </li>
+                    </ul>
+                    <span class="text-4xl font-bold text-white">5,000 ₪</span>
+                </div>
+            </div>
+
+            <!-- TOTAL SETUP -->
+            <div class="total-row rounded-xl p-6 mt-8 text-center">
+                <span class="text-gray-400 text-sm uppercase tracking-widest lang-he">סה"כ הקמה</span>
+                <span class="text-gray-400 text-sm uppercase tracking-widest lang-fr">Total Configuration</span>
+                <div class="text-4xl font-bold text-white mt-2 font-serif">6,000 ₪</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MONTHLY RETAINER -->
+    <section class="py-16 px-6 lg:px-24 bg-[#080808] border-t border-gold/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-3xl text-white uppercase tracking-wider mb-3">
+                    <span class="lang-he">ניהול חודשי</span>
+                    <span class="lang-fr">Gestion Mensuelle</span>
+                </h3>
+                <p class="text-gray-500 text-sm uppercase tracking-widest lang-he">ריטיינר — 6 חודשי פיילוט</p>
+                <p class="text-gray-500 text-sm uppercase tracking-widest lang-fr">Retainer — 6 mois pilote</p>
+            </div>
+
+            <div class="glass-card-featured p-10 rounded-2xl">
+                <div class="space-y-6">
+                    <!-- Social -->
+                    <div class="flex justify-between items-center price-row pb-5">
+                        <div>
+                            <h4 class="text-white text-lg font-bold lang-he">ניהול רשתות חברתיות + תוכן וידאו AI</h4>
+                            <h4 class="text-white text-lg font-bold lang-fr">Réseaux Sociaux + Contenu Vidéo IA</h4>
+                            <p class="text-gray-500 text-xs mt-1 lang-he">פייסבוק + טיקטוק • 4 פוסטים בשבוע • וידאו Google Flow • קופירייטינג דו-לשוני</p>
+                            <p class="text-gray-500 text-xs mt-1 lang-fr">Facebook + TikTok • 4 posts/sem • Vidéo Google Flow • Copywriting bilingue</p>
+                            <div class="value-tag inline-block px-2 py-1 rounded mt-2">
+                                <span class="text-gold text-[10px] lang-he">שווי וידאו 30 שניות: 500-600₪ ליחידה — כלול במחיר</span>
+                                <span class="text-gold text-[10px] lang-fr">Valeur vidéo 30s : 500-600₪/unité — inclus dans le prix</span>
+                            </div>
+                        </div>
+                        <div class="text-left md:text-right flex-shrink-0 mr-4">
+                            <div class="text-2xl font-bold text-white">2,000 ₪</div>
+                            <span class="text-gray-500 text-xs">/חודש</span>
+                        </div>
+                    </div>
+
+                    <!-- Ads -->
+                    <div class="flex justify-between items-center price-row pb-5">
+                        <div>
+                            <h4 class="text-white text-lg font-bold lang-he">ניהול פרסום ממומן</h4>
+                            <h4 class="text-white text-lg font-bold lang-fr">Gestion Publicité Payante</h4>
+                            <p class="text-gray-500 text-xs mt-1">Meta Business Manager + TikTok Business Manager</p>
+                            <p class="text-gray-500 text-xs mt-1 lang-he">כולל: A/B Testing • דו"ח חודשי • אופטימיזציה שוטפת</p>
+                            <p class="text-gray-500 text-xs mt-1 lang-fr">Inclus : A/B Testing • Rapport mensuel • Optimisation continue</p>
+                        </div>
+                        <div class="text-left md:text-right flex-shrink-0 mr-4">
+                            <div class="text-2xl font-bold text-white">500 ₪</div>
+                            <span class="text-gray-500 text-xs">/חודש</span>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance -->
+                    <div class="flex justify-between items-center price-row pb-5">
+                        <div>
+                            <h4 class="text-white text-lg font-bold lang-he">תחזוקת אתר</h4>
+                            <h4 class="text-white text-lg font-bold lang-fr">Maintenance Site Web</h4>
+                            <p class="text-gray-500 text-xs mt-1 lang-he">עדכון תמונות ומוצרים — עד 2 שינויים בחודש</p>
+                            <p class="text-gray-500 text-xs mt-1 lang-fr">Mise à jour photos et produits — jusqu'à 2 modifications/mois</p>
+                        </div>
+                        <div class="text-left md:text-right flex-shrink-0 mr-4">
+                            <div class="text-2xl font-bold text-white">300 ₪</div>
+                            <span class="text-gray-500 text-xs">/חודש</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOTAL MONTHLY -->
+                <div class="total-row rounded-xl p-6 mt-6 text-center">
+                    <span class="text-gray-400 text-sm uppercase tracking-widest lang-he">סה"כ חודשי (DreamNova)</span>
+                    <span class="text-gray-400 text-sm uppercase tracking-widest lang-fr">Total Mensuel (DreamNova)</span>
+                    <div class="text-4xl font-bold text-white mt-2 font-serif">2,800 ₪<span class="text-lg font-normal text-gray-500"> /חודש</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AD BUDGET DIRECT -->
+    <section class="py-12 px-6 lg:px-24 border-t border-gold/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <h4 class="text-gold text-xs uppercase tracking-[0.3em] font-bold mb-6 lang-he">תקציב פרסום ישיר (משולם לפלטפורמות)</h4>
+                <h4 class="text-gold text-xs uppercase tracking-[0.3em] font-bold mb-6 lang-fr">Budget Publicitaire Direct (payé aux plateformes)</h4>
+
+                <div class="text-3xl font-bold text-white mb-4">1,000 ₪ <span class="text-lg font-normal text-gray-500">/חודש</span></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-lg mx-auto">
+                    <div class="glass-card p-5 rounded-xl text-center">
+                        <div class="text-2xl mb-2">📱</div>
+                        <div class="text-white font-bold">TikTok</div>
+                        <div class="text-gold text-lg font-bold mt-1">600-700 ₪</div>
+                        <p class="text-gray-500 text-xs mt-2 lang-he">רכישת קהל צעיר (18-40)</p>
+                        <p class="text-gray-500 text-xs mt-2 lang-fr">Acquisition jeune public (18-40)</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl text-center">
+                        <div class="text-2xl mb-2">👥</div>
+                        <div class="text-white font-bold">Facebook</div>
+                        <div class="text-gold text-lg font-bold mt-1">300-400 ₪</div>
+                        <p class="text-gray-500 text-xs mt-2 lang-he">נאמנות קהל קיים + עולים</p>
+                        <p class="text-gray-500 text-xs mt-2 lang-fr">Fidélisation historique + Olim</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 text-xs mt-6 italic lang-he">* חלוקה לפי ביצועים וניתוח A/B — מותאמת מדי חודש</p>
+                <p class="text-gray-600 text-xs mt-6 italic lang-fr">* Répartition selon performance et split testing — ajustée mensuellement</p>
+            </div>
+
+            <!-- DOMAIN -->
+            <div class="text-center mt-6">
+                <p class="text-gray-600 text-xs lang-he">דומיין (.co.il) : ~11$/חודש • משולם ישירות לרשם הדומיינים</p>
+                <p class="text-gray-600 text-xs lang-fr">Domaine (.co.il) : ~11$/mois • Payé directement au registrar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOTAL RECAP -->
+    <section class="py-16 px-6 lg:px-24 bg-[#080808] border-t border-gold/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="font-serif text-2xl text-white uppercase tracking-wider mb-10 lang-he">סיכום השקעה חודשית</h3>
+            <h3 class="font-serif text-2xl text-white uppercase tracking-wider mb-10 lang-fr">Récapitulatif Investissement Mensuel</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">DreamNova</p>
+                    <div class="text-3xl font-bold text-white">2,800 ₪</div>
+                    <p class="text-gray-600 text-xs mt-2 lang-he">ניהול + תוכן + פרסום + תחזוקה</p>
+                    <p class="text-gray-600 text-xs mt-2 lang-fr">Gestion + Contenu + Ads + Maintenance</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-gray-500 text-xs uppercase tracking-widest mb-2 lang-he">תקציב פרסום</p>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest mb-2 lang-fr">Budget Pub</p>
+                    <div class="text-3xl font-bold text-white">1,000 ₪</div>
+                    <p class="text-gray-600 text-xs mt-2">TikTok + Facebook</p>
+                </div>
+                <div class="glass-card-featured p-6 rounded-xl">
+                    <p class="text-gold text-xs uppercase tracking-widest mb-2 font-bold lang-he">סה"כ חודשי</p>
+                    <p class="text-gold text-xs uppercase tracking-widest mb-2 font-bold lang-fr">Total Mensuel</p>
+                    <div class="text-4xl font-bold shimmer">~3,850 ₪</div>
+                    <p class="text-gray-500 text-xs mt-2 lang-he">כולל הכל</p>
+                    <p class="text-gray-500 text-xs mt-2 lang-fr">Tout compris</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHASE 2 TEASER -->
+    <section class="py-16 px-6 lg:px-24 border-t border-gold/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <p class="text-gray-600 text-xs uppercase tracking-widest mb-4 lang-he">שלב 2 — אלול / ספטמבר 2026</p>
+                <p class="text-gray-600 text-xs uppercase tracking-widest mb-4 lang-fr">Phase 2 — Eloul / Septembre 2026</p>
+                <h3 class="font-serif text-2xl text-white uppercase tracking-wider lang-he">שדרוג לחנות אונליין</h3>
+                <h3 class="font-serif text-2xl text-white uppercase tracking-wider lang-fr">Passage au E-Commerce</h3>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <p class="text-gray-400 mb-6 lang-he">בהתאם לתוצאות 6 חודשי הפיילוט, נשדרג את אתר הקטלוג לחנות מכירות אונליין מלאה — בדיוק לפני ראש השנה.</p>
+                <p class="text-gray-400 mb-6 lang-fr">Selon les résultats du pilote de 6 mois, nous transformerons le catalogue en boutique e-commerce complète — juste avant Roch Hachana.</p>
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                    <div>
+                        <div class="text-gold text-xs uppercase tracking-widest mb-1">Setup</div>
+                        <div class="text-white font-bold">15-20K ₪</div>
+                    </div>
+                    <div>
+                        <div class="text-gold text-xs uppercase tracking-widest mb-1 lang-he">חודשי</div>
+                        <div class="text-gold text-xs uppercase tracking-widest mb-1 lang-fr">Mensuel</div>
+                        <div class="text-white font-bold">4,000+ ₪</div>
+                    </div>
+                    <div>
+                        <div class="text-gold text-xs uppercase tracking-widest mb-1 lang-he">יעד CA</div>
+                        <div class="text-gold text-xs uppercase tracking-widest mb-1 lang-fr">Objectif CA</div>
+                        <div class="text-white font-bold">+15%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-6 text-center border-t border-gold/10">
+        <p class="text-gold text-xs uppercase tracking-[0.4em] mb-6 lang-he">מוכנים להתחיל?</p>
+        <p class="text-gold text-xs uppercase tracking-[0.4em] mb-6 lang-fr">Prêts à commencer ?</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+972585141492" class="inline-block bg-gold text-black px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-yellow-500 transition-all">
+                📞 02-6255883
+            </a>
+            <a href="https://wa.me/972585141492?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%2C%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D%20%D7%91%D7%94%D7%A6%D7%A2%D7%94" class="inline-block border border-gold text-gold px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-gold/10 transition-all">
+                💬 WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-gold/20 text-center">
+        <p class="text-gold text-xs uppercase tracking-[0.4em] mb-3">David Amor</p>
+        <p class="text-gray-600 text-sm">DreamNova Consult — Jerusalem</p>
+        <p class="text-gray-700 text-xs mt-2">dreamnovaultimate@gmail.com | +972 58 514 1492</p>
+        <div class="h-px w-12 bg-gold/30 mx-auto my-6"></div>
+        <p class="text-gray-700 text-[10px] uppercase tracking-widest">Document Confidentiel — Valable 30 Jours — © 2026</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'he' ? 'rtl' : 'ltr');
+            const btnHe = document.getElementById('btn-he');
+            const btnFr = document.getElementById('btn-fr');
+            if (lang === 'he') {
+                btnHe.classList.add('bg-gold', 'text-black');
+                btnHe.classList.remove('text-gold');
+                btnFr.classList.remove('bg-gold', 'text-black');
+                btnFr.classList.add('text-gold');
+            } else {
+                btnFr.classList.add('bg-gold', 'text-black');
+                btnFr.classList.remove('text-gold');
+                btnHe.classList.remove('bg-gold', 'text-black');
+                btnHe.classList.add('text-gold');
+            }
+        }
+    </script>
+</body>
+</html>

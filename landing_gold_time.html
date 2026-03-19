@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Time Jerusalem — הצעה מסחרית | DreamNova Consult</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F5E6B8;
+            --gold-dark: #B8941F;
+            --navy: #0A1128;
+            --dark: #1a1a2e;
+            --white: #FFFFFF;
+            --cream: #FDFBF7;
+            --grey: #6B7280;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Heebo', 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,17,40,0.85) 0%, rgba(26,26,46,0.7) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .hero-cta:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.3); }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--grey);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        /* PROBLEMS */
+        .problems { background: var(--white); }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .problem-card {
+            background: #FEF3F2;
+            border-right: 4px solid #EF4444;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .problem-card h3 { color: #EF4444; font-size: 1rem; margin-bottom: 0.5rem; }
+        .problem-card p { color: var(--dark); font-size: 0.95rem; line-height: 1.6; }
+
+        /* SOLUTIONS */
+        .solutions { background: var(--cream); }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .solution-card {
+            background: var(--white);
+            border-right: 4px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .solution-card h3 { color: var(--gold-dark); font-size: 1rem; margin-bottom: 0.5rem; }
+        .solution-card p { font-size: 0.95rem; line-height: 1.6; }
+
+        /* PRICING */
+        .pricing { background: var(--navy); color: var(--white); }
+        .pricing h2 { color: var(--white); }
+        .pricing .section-sub { color: rgba(255,255,255,0.6); }
+        .price-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .price-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card.featured {
+            border-color: var(--gold);
+            background: rgba(212,175,55,0.08);
+        }
+        .price-card.featured::before {
+            content: 'מומלץ';
+            position: absolute;
+            top: 12px;
+            left: -30px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 4px 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+        .price-card h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .price-amount { font-size: 2.5rem; font-weight: 700; color: var(--white); margin: 1rem 0; }
+        .price-amount span { font-size: 1rem; color: rgba(255,255,255,0.5); }
+        .price-list { list-style: none; margin-top: 1.5rem; }
+        .price-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .price-list li::before { content: '✓ '; color: var(--gold); font-weight: 700; }
+
+        /* PESSAH */
+        .pessah {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: var(--navy);
+            text-align: center;
+        }
+        .pessah h2 { color: var(--navy); }
+        .pessah-box {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .pessah-price { font-size: 3rem; font-weight: 700; color: var(--navy); }
+        .pessah-price span { font-size: 1rem; color: var(--grey); display: block; }
+        .pessah-note { font-size: 0.9rem; color: var(--gold-dark); font-weight: 600; margin-top: 1rem; }
+
+        /* CTA */
+        .cta-section { background: var(--white); text-align: center; padding: 4rem 2rem; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover { background: var(--dark); transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+
+        /* TABLE */
+        .price-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .price-table th { background: var(--navy); color: var(--white); padding: 0.8rem; text-align: right; font-size: 0.9rem; }
+        .price-table td { padding: 0.8rem; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .price-table tr:nth-child(even) { background: #f9f9f9; }
+        .price-table .total { font-weight: 700; background: var(--gold-light) !important; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .price-cards { grid-template-columns: 1fr; }
+            section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO with video background placeholder -->
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="" type="video/mp4">
+        <!-- David insère la vidéo Antigravity/Google Flow ici -->
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">הצעה בלעדית — DreamNova Consult</div>
+        <h1>Gold Time <span>Jerusalem</span></h1>
+        <h1 style="font-size:clamp(1.5rem,3vw,2.2rem);margin-top:-0.5rem;">טרנספורמציה דיגיטלית מותאמת אישית</h1>
+        <p>יותר מ-60 שנה של מסורת. הגיע הזמן להביא את הנוכחות הדיגיטלית שלכם לאותה רמה של יוקרה.</p>
+        <a href="#pricing" class="hero-cta">לצפייה בהצעה ←</a>
+    </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="problems">
+    <div class="container">
+        <h2>האתגרים שזיהינו</h2>
+        <p class="section-sub">על סמך ניתוח מעמיק של הנוכחות הדיגיטלית שלכם</p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>אתר goldtime.com לא פעיל</h3>
+                <p>הדומיין מופנה לאתר פרקינג. לקוחות שמחפשים אתכם בגוגל מגיעים לדף ריק — פגיעה ישירה באמינות.</p>
+            </div>
+            <div class="problem-card">
+                <h3>עמוד הפייסבוק לא פעיל 10 שנים</h3>
+                <p>הפוסט האחרון ממרץ 2016. עמוד עם 2,300 עוקבים ל-5 חנויות — פוטנציאל אדיר שלא מנוצל.</p>
+            </div>
+            <div class="problem-card">
+                <h3>קהל לקוחות מזדקן</h3>
+                <p>הדור הצעיר קונה אונליין ובטיקטוק. בלי נוכחות דיגיטלית, הלקוחות החדשים לא מגיעים.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions">
+    <div class="container">
+        <h2>הפתרון שלנו</h2>
+        <p class="section-sub">אסטרטגיה דיגיטלית מקיפה — מותאמת ל-Gold Time</p>
+        <div class="solution-grid">
+            <div class="solution-card">
+                <h3>🌐 אתר קטלוג יוקרתי</h3>
+                <p>אתר ויטרינה מודרני עם כל המוצרים, תמונות מקצועיות, ניווט קל, תמיכה בעברית ואנגלית. מותאם לנייד ולתיירים.</p>
+            </div>
+            <div class="solution-card">
+                <h3>📱 ניהול רשתות חברתיות</h3>
+                <p>תוכן וידאו מקצועי עם AI, פוסטים שבועיים בפייסבוק וטיקטוק, ניהול קהילה ותגובות. תוכן שמושך את הדור הצעיר.</p>
+            </div>
+            <div class="solution-card">
+                <h3>📣 פרסום ממומן</h3>
+                <p>קמפיינים בפייסבוק וטיקטוק עם פילוח מדויק: תיירים, תושבי ירושלים, חגים. בדיקות A/B ודוח ROI חודשי.</p>
+            </div>
+            <div class="solution-card">
+                <h3>🎬 תוכן וידאו AI</h3>
+                <p>סרטוני 30 שניות מקצועיים עם כלי AI מתקדמים (Google Flow, Antigravity). איכות סטודיו בשבריר המחיר.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2>מחירון</h2>
+        <p class="section-sub">השקעה חכמה בעתיד הדיגיטלי של Gold Time</p>
+
+        <div class="price-cards">
+            <!-- SETUP -->
+            <div class="price-card">
+                <h3>🏗️ הקמה (חד פעמי)</h3>
+                <table class="price-table" style="color:#fff;">
+                    <tr><td>צילום מקצועי במקום</td><td style="text-align:left;font-weight:600;">1,000₪</td></tr>
+                    <tr><td>אתר קטלוג יוקרתי</td><td style="text-align:left;font-weight:600;">5,000₪</td></tr>
+                    <tr class="total"><td style="color:var(--navy);">סה"כ הקמה</td><td style="text-align:left;font-weight:700;color:var(--navy);">6,000₪</td></tr>
+                </table>
+            </div>
+
+            <!-- MONTHLY -->
+            <div class="price-card featured">
+                <h3>📅 חודשי</h3>
+                <table class="price-table" style="color:#fff;">
+                    <tr><td>ניהול רשתות חברתיות + תוכן וידאו AI</td><td style="text-align:left;font-weight:600;">2,000₪</td></tr>
+                    <tr><td>ניהול פרסום ממומן (Meta + TikTok)</td><td style="text-align:left;font-weight:600;">500₪</td></tr>
+                    <tr><td>תחזוקת אתר (עדכונים 1-2x/חודש)</td><td style="text-align:left;font-weight:600;">300₪</td></tr>
+                    <tr class="total"><td style="color:var(--navy);">סה"כ חודשי</td><td style="text-align:left;font-weight:700;color:var(--navy);">2,800₪</td></tr>
+                </table>
+                <p style="font-size:0.8rem;margin-top:1rem;color:rgba(255,255,255,0.5);">* תקציב פרסום מומלץ: 1,000₪/חודש (טיקטוק + פייסבוק) — נפרד מדמי הניהול</p>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);">* דומיין: ~11$/חודש</p>
+            </div>
+        </div>
+
+        <!-- VALEUR UNITAIRE -->
+        <div style="margin-top:3rem;text-align:center;">
+            <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">💡 שווי וידאו מקצועי של 30 שניות: 500-600₪ ליחידה.<br>בניהול החודשי שלנו — ייצור התוכן כלול במחיר.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PESSAH SPECIAL -->
+<section class="pessah">
+    <div class="container">
+        <h2>🕎 מבצע לפני פסח</h2>
+        <p style="font-size:1.1rem;margin-bottom:1rem;">הזמן הכי טוב להתחיל — 13 ימים לפסח</p>
+        <div class="pessah-box">
+            <div class="pessah-price">
+                2,500₪
+                <span>דף נחיתה מקצועי + 2 פוסטים לרשתות חברתיות</span>
+            </div>
+            <ul style="text-align:right;list-style:none;margin-top:1.5rem;">
+                <li style="padding:0.4rem 0;">✓ דף נחיתה יוקרתי לפסח עם וידאו</li>
+                <li style="padding:0.4rem 0;">✓ פוסט פייסבוק בעברית עם קופירייטינג מקצועי</li>
+                <li style="padding:0.4rem 0;">✓ סרטון טיקטוק 15-30 שניות</li>
+                <li style="padding:0.4rem 0;">✓ אסטרטגיית תוכן מותאמת לפסח</li>
+            </ul>
+            <p class="pessah-note">* הסכום מקוזז מעלות ההקמה (5,000₪) ומהחודש הראשון (2,000₪)</p>
+            <a href="https://wa.me/972585141492?text=שלום%20דוד%2C%20מעוניינים%20בהצעה%20לפסח" class="hero-cta" style="margin-top:1.5rem;">לשיחה עם דוד ←</a>
+        </div>
+    </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="solutions">
+    <div class="container">
+        <h2>אסטרטגיית התוכן</h2>
+        <p class="section-sub">תוכנית עבודה ל-6 חודשים הראשונים</p>
+        <div class="solution-grid">
+            <div class="solution-card">
+                <h3>שבוע 1-2: לפני פסח 🔥</h3>
+                <p>דף נחיתה + 2 פוסטים + קמפיין ממומן. מיידי — תוצאות תוך ימים. קהל יעד: תושבי ירושלים שמחפשים מתנות לפסח.</p>
+            </div>
+            <div class="solution-card">
+                <h3>חודש 1-2: בנייה 🏗️</h3>
+                <p>אתר קטלוג חי + צילומים מקצועיים + 4 פוסטים/שבוע. בניית קהילה דיגיטלית. Google My Business אופטימיזציה ל-5 סניפים.</p>
+            </div>
+            <div class="solution-card">
+                <h3>חודש 3-4: צמיחה 📈</h3>
+                <p>טיקטוק + אינסטגרם מלא. סרטוני unboxing, סיפורי לקוחות, behind the scenes. קמפיינים ממומנים עם retargeting.</p>
+            </div>
+            <div class="solution-card">
+                <h3>חודש 5-6: הרחבה 🚀</h3>
+                <p>שיתופי פעולה עם משפיענים מקומיים. קמפיינים לחגים (ראש השנה, חנוכה). דו"ח ROI מלא + המלצות להמשך.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>מוכנים להתחיל?</h2>
+    <p style="color:var(--grey);margin:1rem 0 2rem;">דוד אמור — DreamNova Consult<br>ירושלים, ישראל</p>
+    <a href="tel:+972585141492" class="cta-btn" style="margin-left:1rem;">📞 02-6255883</a>
+    <a href="https://wa.me/972585141492" class="cta-btn" style="background:var(--gold);color:var(--navy);">💬 WhatsApp</a>
+    <p style="margin-top:2rem;color:var(--grey);font-size:0.9rem;">dreamnovaultimate@gmail.com | +972 58 514 1492</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 DreamNova Consult — Infrastructure AI & Transformation Digitale</p>
+    <p style="margin-top:0.5rem;"><a href="/proposal.pdf">📄 הצעה מלאה (PDF)</a></p>
+</footer>
+
+</body>
+</html>

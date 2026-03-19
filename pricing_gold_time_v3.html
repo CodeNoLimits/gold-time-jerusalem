@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Time Jerusalem — Proposition Stratégique 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Heebo:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --gold-light: #F5E6B8; --navy: #050A1A; --dark: #030303; }
+        body { font-family: 'Heebo', sans-serif; background-color: var(--dark); color: #f3f4f6; }
+        .font-serif { font-family: 'Cinzel', serif; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        .shimmer {
+            background: linear-gradient(90deg, #b8860b, #fcc200, #ffffff, #fcc200, #b8860b);
+            background-size: 200% auto; animation: shimmerEffect 5s linear infinite;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        @keyframes shimmerEffect { to { background-position: 200% center; } }
+        .video-bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+        .video-bg-container video { min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.3; filter: contrast(1.1) brightness(0.8) saturate(0.8); }
+        .glass-panel { background: rgba(255,255,255,0.01); backdrop-filter: blur(20px); border: 1px solid rgba(212,175,55,0.1); border-radius: 32px; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .glass-panel:hover { border-color: rgba(212,175,55,0.4); background: rgba(255,255,255,0.03); }
+        .shape-shifter { position: relative; overflow: hidden; border-radius: 24px; aspect-ratio: 16/10; border: 1px solid rgba(255,255,255,0.05); }
+        .shape-shifter img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
+        .shape-shifter img.active { opacity: 1; }
+        [lang="fr"] .lang-he { display: none !important; }
+        [lang="he"] .lang-fr { display: none !important; }
+        html[lang="fr"] { direction: ltr; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-gold { background: var(--gold); color: var(--navy); padding: 1.25rem 2.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; transition: all 0.3s ease; border-radius: 4px; text-decoration: none; display: inline-block; }
+        .btn-gold:hover { background: white; transform: scale(1.05); box-shadow: 0 0 30px rgba(212,175,55,0.4); }
+        .value-tag { background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: inline-block; padding: 0.25rem 0.75rem; border-radius: 6px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center pointer-events-none">
+        <div class="font-serif text-gold text-2xl tracking-[0.4em] font-bold pointer-events-auto">GOLD TIME</div>
+        <button onclick="toggleLang()" class="pointer-events-auto border border-gold/30 px-6 py-2 text-[10px] tracking-[0.3em] text-gold hover:bg-gold hover:text-black transition-all font-black uppercase bg-black/40 backdrop-blur-md">
+            <span class="lang-he">FRANÇAIS</span>
+            <span class="lang-fr">עברית</span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="video-bg-container">
+            <video autoplay muted loop playsinline>
+                <source src="Luxury_watch_and_202603191612.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-[#030303] z-10"></div>
+        </div>
+        <div class="relative z-20 max-w-6xl px-6">
+            <div class="mb-10 reveal"><span class="px-8 py-2 bg-gold/10 border border-gold/30 text-gold text-[10px] tracking-[0.8em] uppercase rounded-full">DreamNova Master Strategy</span></div>
+            <h1 class="font-serif text-8xl md:text-[10rem] font-bold mb-4 shimmer tracking-tighter">GOLD TIME</h1>
+            <h2 class="font-luxury italic text-3xl md:text-6xl text-white/90 mb-16 reveal">
+                <span class="lang-he">60 שנות מורשת פוגשות את המחר</span>
+                <span class="lang-fr">60 Ans d'Héritage Rencontrent Demain</span>
+            </h2>
+            <div class="reveal"><a href="#pricing" class="btn-gold text-[11px]"><span class="lang-he">לצפייה בתוכנית ←</span><span class="lang-fr">Voir le Plan ←</span></a></div>
+        </div>
+    </header>
+
+    <!-- CONTEXTE & ANALYSE -->
+    <section class="py-24 px-6 lg:px-24 border-y border-gold/10 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h3 class="font-serif text-3xl text-gold mb-8 italic lang-he">אתגר ההמשכיות</h3>
+                    <h3 class="font-serif text-3xl text-gold mb-8 italic lang-fr">Le Défi de la Transmission</h3>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed lang-he">עם 60 שנות פעילות, גולד טיים היא מוסד ירושלמי. אולם, השוק משתנה. סטטיסטית, מאגר של 1,000 לקוחות נאמנים חווה שחיקה טבעית של 20% עד 40% בכל מחזור של 10 שנים.</p>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed lang-fr">Avec 60 ans de présence, Gold Time est une institution. Cependant, le marché évolue. Statistiquement, une base de 1 000 clients subit une érosion de 20% à 40% tous les 10 ans.</p>
+                    <p class="text-white text-lg font-medium leading-relaxed border-r-4 border-gold pr-6 lang-he">האתגר הוא לא רק למכור, אלא <span class="text-gold">לחדש את זרם הלקוחות</span> בחנות על ידי משיכת קונים חדשים במקום בו הם נמצאים: בסמארטפון שלהם.</p>
+                    <p class="text-white text-lg font-medium leading-relaxed border-l-4 border-gold pl-6 lang-fr">L'enjeu est de <span class="text-gold">renouveler le flux de clientèle</span> en magasin en séduisant les nouveaux acheteurs sur leur smartphone.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-6 reveal">
+                    <div class="glass-panel p-8 text-center">
+                        <span class="block text-4xl font-bold text-white mb-2">60+</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-he">שנות היסטוריה</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-fr">Ans d'Histoire</span>
+                    </div>
+                    <div class="glass-panel p-8 text-center">
+                        <span class="block text-4xl font-bold text-white mb-2">2</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-he">נקודות מכירה</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-fr">Points de Vente</span>
+                    </div>
+                    <div class="glass-panel p-8 text-center">
+                        <span class="block text-4xl font-bold text-white mb-2">13</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-he">ימים לפני פסח</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-fr">Jours avant Pessah</span>
+                    </div>
+                    <div class="glass-panel p-8 text-center">
+                        <span class="block text-4xl font-bold text-white mb-2">6</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-he">חודשי פיילוט</span>
+                        <span class="text-gold text-xs uppercase tracking-widest lang-fr">Mois de Pilote</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="py-40 px-8 container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="reveal">
+                <h3 class="font-serif text-gold text-xs tracking-[0.5em] uppercase mb-8">Evolution Strategy</h3>
+                <h2 class="text-5xl md:text-7xl font-bold mb-10 leading-[1.1]">
+                    <span class="lang-he">מהקטלוג למכירות: <br><span class="font-luxury italic font-normal" style="color:var(--gold-light)">טרנספורמציה בשלבים</span></span>
+                    <span class="lang-fr">Du Catalogue à la Vente : <br><span class="font-luxury italic font-normal" style="color:var(--gold-light)">Transformation par Étapes</span></span>
+                </h2>
+                <div class="space-y-10 border-r-2 border-gold/20 pr-10">
+                    <div>
+                        <h4 class="text-white font-bold mb-2 lang-he">שלב 1: קטלוג דיגיטלי יוקרתי (חודשים 1-6)</h4>
+                        <h4 class="text-white font-bold mb-2 lang-fr">Phase 1 : Catalogue Digital Prestige (Mois 1-6)</h4>
+                        <p class="text-gray-400 text-sm lang-he">בניית נוכחות מקוונת, הצגת כל הקולקציות ויצירת תנועה לחנויות (קינג ג'ורג' ומלחה).</p>
+                        <p class="text-gray-400 text-sm lang-fr">Bâtir la notoriété, présenter les collections et générer du flux en magasin.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2 lang-he">שלב 2: מעבר לאיקומרס מלא (חודש אלול / ספטמבר)</h4>
+                        <h4 class="text-white font-bold mb-2 lang-fr">Phase 2 : Passage E-commerce (Elul / Septembre)</h4>
+                        <p class="text-gray-400 text-sm lang-he">פתיחת מכירות ישירות לראש השנה. תשלומים מאובטחים ולוגיסטיקה אוטומטית.</p>
+                        <p class="text-gray-400 text-sm lang-fr">Ouverture de la vente directe pour Roch Hachana. Paiements sécurisés.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal">
+                <div class="shape-shifter shadow-2xl" id="shifter">
+                    <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80" class="active" alt="Luxury jewelry display">
+                    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&q=80" alt="Luxury watch closeup">
+                </div>
+                <div class="mt-8 flex justify-between items-center text-[10px] text-gold font-black uppercase tracking-[0.4em]">
+                    <span>Catalog Edition</span>
+                    <div class="h-px bg-gold/20 flex-1 mx-6"></div>
+                    <span>Commerce Edition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLITZ PESSAH -->
+    <section class="py-32 bg-gold/5 border-y border-gold/10">
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <h2 class="font-serif text-6xl text-white mb-10 reveal uppercase">Blitz Passover</h2>
+            <p class="text-gold text-xl tracking-widest mb-20 reveal lang-he">13 ימים להשגת נוכחות מקסימלית לחג</p>
+            <p class="text-gold text-xl tracking-widest mb-20 reveal lang-fr">13 jours pour une visibilité maximale avant les fêtes</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="glass-panel p-16 relative reveal">
+                    <div class="absolute top-8 left-8 text-gold font-serif opacity-20 text-8xl">P</div>
+                    <h4 class="text-3xl font-bold mb-8 lang-he">השקעת בליץ פסח</h4>
+                    <h4 class="text-3xl font-bold mb-8 lang-fr">Investissement Blitz</h4>
+                    <div class="text-6xl font-black text-white mb-6">2,500 ₪</div>
+                    <ul class="text-sm text-gray-400 space-y-4 mb-10 text-right md:text-center">
+                        <li class="lang-he">• יצירת עמוד נחיתה "Collection Pessah"</li>
+                        <li class="lang-he">• 2 פוסטים לרשתות החברתיות (IA Flow)</li>
+                        <li class="lang-he">• קופירייטינג מקצועי (עברית/צרפתית)</li>
+                        <li class="lang-fr">• Landing Page "Collection Pessah"</li>
+                        <li class="lang-fr">• 2 Posts Réseaux Sociaux (IA Flow)</li>
+                        <li class="lang-fr">• Copywriting bilingue (HE/FR)</li>
+                    </ul>
+                    <p class="text-[10px] text-gold font-bold uppercase border-t border-gold/20 pt-6 lang-he">* סכום זה יקוזז במלואו מהחוזה של 6 חודשים</p>
+                    <p class="text-[10px] text-gold font-bold uppercase border-t border-gold/20 pt-6 lang-fr">* Entièrement déductible du contrat 6 mois</p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-6 reveal">
+                    <p class="text-gray-400 text-lg italic leading-relaxed lang-he">"הזדמנות קריטית לחדש את זרם הלקוחות הצעירים (20-40) דרך טיקטוק ואינסטגרם עוד לפני ערב החג."</p>
+                    <p class="text-gray-400 text-lg italic leading-relaxed lang-fr">"Opportunité critique de renouveler le flux de jeunes clients (20-40) via TikTok et Instagram avant la fête."</p>
+                    <a href="https://wa.me/972585141492?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%2C%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D%20%D7%91%D7%91%D7%9C%D7%99%D7%A5%20%D7%A4%D7%A1%D7%97" class="btn-gold w-full text-center text-xs lang-he">להתחיל את הבליץ ←</a>
+                    <a href="https://wa.me/972585141492?text=Bonjour%20David%2C%20int%C3%A9ress%C3%A9%20par%20le%20Blitz%20Pessah" class="btn-gold w-full text-center text-xs lang-fr">Lancer le Blitz ←</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PHASE 1 -->
+    <section id="pricing" class="py-40 container mx-auto px-8 relative">
+        <div class="video-bg-container" style="height:100%">
+            <video autoplay muted loop playsinline><source src="Luxury_watch_mechanism_202603191615.mp4" type="video/mp4"></video>
+        </div>
+        <div class="relative z-10">
+            <h2 class="font-serif text-4xl text-center text-gold mb-6 uppercase tracking-[0.5em] reveal">
+                <span class="lang-he">תוכנית 6 חודשים</span>
+                <span class="lang-fr">Plan 6 Mois</span>
+            </h2>
+            <p class="text-center text-gray-500 text-sm mb-24 reveal lang-he">שלב 1: קטלוג דיגיטלי + רשתות חברתיות + פרסום</p>
+            <p class="text-center text-gray-500 text-sm mb-24 reveal lang-fr">Phase 1 : Catalogue digital + Réseaux sociaux + Publicité</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- SETUP -->
+                <div class="glass-panel p-12 reveal">
+                    <h3 class="text-gold text-xs font-bold uppercase tracking-widest mb-10 lang-he">הקמה (חד פעמי)</h3>
+                    <h3 class="text-gold text-xs font-bold uppercase tracking-widest mb-10 lang-fr">Setup (Unique)</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <span class="text-sm lang-he">צילום מקצועי בחנות</span>
+                                <span class="text-sm lang-fr">Séance photo professionnelle</span>
+                                <div class="value-tag mt-2"><span class="text-gold text-[10px] lang-he">חיסכון 67%</span><span class="text-gold text-[10px] lang-fr">-67%</span></div>
+                            </div>
+                            <div class="text-left">
+                                <span class="text-gray-600 line-through text-xs block">3,000 ₪</span>
+                                <span class="font-bold text-lg">1,000 ₪</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-4">
+                            <span class="text-sm lang-he">אתר קטלוג יוקרתי</span>
+                            <span class="text-sm lang-fr">Site catalogue premium</span>
+                            <span class="font-bold text-lg">5,000 ₪</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gold/20 text-center">
+                        <span class="text-gray-500 text-xs uppercase tracking-widest lang-he">סה"כ הקמה</span>
+                        <span class="text-gray-500 text-xs uppercase tracking-widest lang-fr">Total Setup</span>
+                        <div class="text-3xl font-black text-white mt-2">6,000 ₪</div>
+                    </div>
+                </div>
+
+                <!-- MENSUEL -->
+                <div class="glass-panel p-12 border-gold/30 bg-gold/5 reveal" style="transform:scale(1.05)">
+                    <h3 class="text-gold text-xs font-bold uppercase tracking-widest mb-10 lang-he">ניהול חודשי</h3>
+                    <h3 class="text-gold text-xs font-bold uppercase tracking-widest mb-10 lang-fr">Gestion Mensuelle</h3>
+                    <div class="space-y-5">
+                        <div class="flex justify-between text-sm border-b border-white/5 pb-3">
+                            <div>
+                                <span class="lang-he">רשתות חברתיות + וידאו AI</span>
+                                <span class="lang-fr">Socials + Vidéo IA</span>
+                                <p class="text-gray-600 text-[10px] mt-1">Facebook + TikTok + Google Flow</p>
+                            </div>
+                            <span class="font-bold">2,000 ₪</span>
+                        </div>
+                        <div class="flex justify-between text-sm border-b border-white/5 pb-3">
+                            <div>
+                                <span class="lang-he">ניהול קמפיינים</span>
+                                <span class="lang-fr">Gestion Ads</span>
+                                <p class="text-gray-600 text-[10px] mt-1">Meta + TikTok Business</p>
+                            </div>
+                            <span class="font-bold">500 ₪</span>
+                        </div>
+                        <div class="flex justify-between text-sm border-b border-white/5 pb-3">
+                            <div>
+                                <span class="lang-he">תחזוקת אתר</span>
+                                <span class="lang-fr">Maintenance site</span>
+                                <p class="text-gray-600 text-[10px] mt-1 lang-he">2 עדכונים/חודש</p>
+                                <p class="text-gray-600 text-[10px] mt-1 lang-fr">2 modifications/mois</p>
+                            </div>
+                            <span class="font-bold">300 ₪</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gold/20 flex justify-between items-center">
+                        <span class="font-black text-xl text-white uppercase">Total</span>
+                        <span class="font-black text-3xl text-gold">2,800 ₪<span class="text-sm font-normal text-gray-500"> /mo</span></span>
+                    </div>
+                    <div class="value-tag mt-4 text-center w-full">
+                        <span class="text-gold text-[10px] lang-he">שווי וידאו 30 שניות: 500-600₪ — כלול</span>
+                        <span class="text-gold text-[10px] lang-fr">Valeur vidéo 30s : 500-600₪ — inclus</span>
+                    </div>
+                </div>
+
+                <!-- AD BUDGET -->
+                <div class="glass-panel p-12 reveal">
+                    <h3 class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-10 lang-he">תקציב מדיה (Ad Spend)</h3>
+                    <h3 class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-10 lang-fr">Budget Pub (Ad Spend)</h3>
+                    <div class="text-5xl font-black text-white mb-8">900 ₪ <span class="text-xs font-normal text-gray-500">/mo</span></div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-[9px] uppercase tracking-widest"><span>TikTok (Growth)</span><span>600 ₪</span></div>
+                        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden"><div class="bg-gold h-full w-[66%]"></div></div>
+                        <div class="flex justify-between text-[9px] uppercase tracking-widest"><span>Meta (Retention)</span><span>300 ₪</span></div>
+                        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden"><div class="bg-white/20 h-full w-[33%]"></div></div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <p class="text-[10px] text-gray-500 italic lang-he">חלוקה לפי ביצועים — מותאמת מדי חודש. ROI צפוי M3: 4.5x-6.0x</p>
+                        <p class="text-[10px] text-gray-500 italic lang-fr">Répartition selon performance — ajustée mensuellement. ROI M3 : 4.5x-6.0x</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="text-gray-600 text-[10px] lang-he">דומיין (.co.il): ~11$/חודש</span>
+                        <span class="text-gray-600 text-[10px] lang-fr">Domaine (.co.il) : ~11$/mois</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="mt-16 text-center reveal">
+                <div class="glass-panel inline-block px-16 py-8 border-gold/30">
+                    <span class="text-gray-400 text-xs uppercase tracking-widest block mb-2 lang-he">סה"כ חודשי (הכל כלול)</span>
+                    <span class="text-gray-400 text-xs uppercase tracking-widest block mb-2 lang-fr">Total Mensuel (tout compris)</span>
+                    <span class="text-5xl font-black shimmer">~3,750 ₪</span>
+                    <span class="text-gray-500 text-sm block mt-2">/mo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APRÈS 6 MOIS — AGENDA SEULEMENT (PAS DE PRIX) -->
+    <section class="py-24 px-8 border-t border-gold/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="font-serif text-2xl text-gold uppercase tracking-[0.3em] mb-6 reveal lang-he">מה אחרי 6 חודשים?</h3>
+            <h3 class="font-serif text-2xl text-gold uppercase tracking-[0.3em] mb-6 reveal lang-fr">Et après 6 mois ?</h3>
+            <p class="text-gray-400 text-lg mb-16 reveal lang-he">בהתאם לתוצאות הפיילוט, נמליץ על הצעד הבא:</p>
+            <p class="text-gray-400 text-lg mb-16 reveal lang-fr">Selon les résultats du pilote, nous recommanderons l'étape suivante :</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                <div class="glass-panel p-8 text-center">
+                    <div class="text-3xl mb-4">🛒</div>
+                    <h4 class="text-white font-bold mb-3 lang-he">מעבר לאיקומרס</h4>
+                    <h4 class="text-white font-bold mb-3 lang-fr">Passage E-commerce</h4>
+                    <p class="text-gray-500 text-sm lang-he">פתיחת חנות אונליין מלאה עם תשלומים מאובטחים — בדיוק לפני ראש השנה (אלול/ספטמבר).</p>
+                    <p class="text-gray-500 text-sm lang-fr">Boutique en ligne complète avec paiements sécurisés — juste avant Roch Hachana (Elul/Septembre).</p>
+                </div>
+                <div class="glass-panel p-8 text-center">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h4 class="text-white font-bold mb-3 lang-he">אוטומציה WhatsApp</h4>
+                    <h4 class="text-white font-bold mb-3 lang-fr">Automatisation WhatsApp</h4>
+                    <p class="text-gray-500 text-sm lang-he">בוט חכם לשירות לקוחות 24/7 — מענה אוטומטי, קטלוג וקביעת פגישות.</p>
+                    <p class="text-gray-500 text-sm lang-fr">Bot intelligent 24/7 — réponses automatiques, catalogue et prise de rendez-vous.</p>
+                </div>
+                <div class="glass-panel p-8 text-center">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h4 class="text-white font-bold mb-3 lang-he">הרחבת מדיה</h4>
+                    <h4 class="text-white font-bold mb-3 lang-fr">Expansion Média</h4>
+                    <p class="text-gray-500 text-sm lang-he">Google Ads, אינסטגרם, שיתופי פעולה עם משפיענים מקומיים וקמפיינים לחגים.</p>
+                    <p class="text-gray-500 text-sm lang-fr">Google Ads, Instagram, collaborations influenceurs locaux et campagnes saisonnières.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT PREVIEW -->
+    <section class="py-24 px-6 lg:px-24 bg-[#080808] border-t border-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl text-center text-white mb-16 italic reveal">
+                <span class="lang-he">תצוגה מקדימה של אסטרטגיית התוכן</span>
+                <span class="lang-fr">Aperçu Stratégie Social Media</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="glass-panel p-8 reveal">
+                    <h5 class="text-gold text-xs uppercase tracking-widest mb-6 lang-he">פוסט פייסבוק / אינסטגרם (Nano Banana)</h5>
+                    <h5 class="text-gold text-xs uppercase tracking-widest mb-6 lang-fr">Post Facebook / Instagram (Photo Nano)</h5>
+                    <div class="aspect-square bg-slate-900 rounded-2xl mb-6 flex items-center justify-center border border-white/5 mx-auto max-w-[400px]">
+                        <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" alt="Nano Banana Showcase" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <p class="text-white font-medium text-sm lang-he">חג חירות שמח! הגיע הזמן להתחדש. מתנה מושלמת לפסח מחכה לכם בגולד טיים ירושלים. שעוני יוקרה ותכשיטים בעיצוב נצחי.</p>
+                    <p class="text-white font-medium text-sm lang-fr">Célébrez Pessah avec éclat ! Découvrez notre collection exclusive de montres et bijoux de luxe chez Gold Time Jerusalem.</p>
+                </div>
+                <div class="glass-panel p-8 reveal">
+                    <h5 class="text-gold text-xs uppercase tracking-widest mb-6 lang-he">תוכן טיקטוק / Reels (Google Flow)</h5>
+                    <h5 class="text-gold text-xs uppercase tracking-widest mb-6 lang-fr">Contenu TikTok / Reels (Vidéo Flow)</h5>
+                    <div class="aspect-[9/16] bg-slate-900 rounded-2xl mb-6 flex items-center justify-center border border-white/5 mx-auto max-w-[250px] overflow-hidden">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                            <source src="flow images and videos/Man_entering_store_202603191611.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="space-y-2 text-xs text-gray-500">
+                        <p><strong class="text-white">0s-3s :</strong> <span class="lang-he">מעבר רגשי קינג ג'ורג' ← ויטרינה</span><span class="lang-fr">Transition King George → Vitrine</span></p>
+                        <p><strong class="text-white">3s-10s :</strong> <span class="lang-he">פוקוס היפנוטי על שעון יוקרה</span><span class="lang-fr">Focus hypnotique sur montre de luxe</span></p>
+                        <p><strong class="text-white">10s-15s :</strong> <span class="lang-he">"60 שנות מצוינות". קריאה לפעולה</span><span class="lang-fr">"60 ans d'excellence". Call to action</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 text-center border-t border-gold/10">
+        <p class="text-gold text-xs uppercase tracking-[0.4em] mb-8 lang-he">מוכנים להתחיל?</p>
+        <p class="text-gold text-xs uppercase tracking-[0.4em] mb-8 lang-fr">Prêts à commencer ?</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="tel:+972585141492" class="btn-gold text-[11px]">📞 +972 58 514 1492</a>
+            <a href="https://wa.me/972585141492" class="border border-gold text-gold px-10 py-5 font-black uppercase text-[11px] tracking-widest hover:bg-gold/10 transition-all inline-block">💬 WhatsApp</a>
+        </div>
+        <p class="text-gray-600 text-xs">dreamnovaultimate@gmail.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-32 text-center border-t border-gold/20">
+        <div class="mb-6 font-serif text-gold/30 tracking-[1.5em] text-[8px] uppercase">Gold Time Jerusalem — Est. 1966</div>
+        <p class="text-6xl font-luxury text-white mb-6 italic">David Amor</p>
+        <p class="text-gray-500 font-light text-[10px] uppercase tracking-[0.5em]">Lead AI Architect — DreamNova Consult</p>
+        <div class="h-px w-12 bg-gold/30 mx-auto my-8"></div>
+        <p class="text-gray-700 text-[10px] uppercase tracking-widest">Document Confidentiel — Valable 30 Jours — © 2026</p>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            const html = document.documentElement;
+            const next = html.lang === 'he' ? 'fr' : 'he';
+            html.lang = next; html.dir = next === 'he' ? 'rtl' : 'ltr';
+        }
+        const imgs = document.querySelectorAll('#shifter img');
+        if (imgs.length > 0) {
+            let idx = 0;
+            setInterval(() => { imgs[idx].classList.remove('active'); idx = (idx + 1) % imgs.length; imgs[idx].classList.add('active'); }, 3500);
+        }
+        const reveal = () => { document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active'); }); };
+        window.addEventListener('scroll', reveal); window.onload = reveal;
+    </script>
+</body>
+</html>

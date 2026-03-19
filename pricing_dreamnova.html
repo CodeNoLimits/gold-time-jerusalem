@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="flow images and videos/_Sublime_this_picture_202603191608.jpeg">
+    <meta property="og:title" content="Gold Time Jerusalem — Plan de Transformation Digitale">
+    <meta property="og:description" content="תכנית טרנספורמציה דיגיטלית מקיפה — DreamNova Consult Mars 2026">
+    <title>Gold Time Jerusalem — תכנית טרנספורמציה דיגיטלית | DreamNova Consult</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F5E6B8;
+            --gold-dark: #B8941F;
+            --navy: #0A1128;
+            --dark: #1a1a2e;
+            --white: #FFFFFF;
+            --cream: #FDFBF7;
+            --grey: #6B7280;
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Heebo', 'Inter', sans-serif;
+            background: #050505;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* LANGUAGE SWITCH */
+        [lang="fr"] .lang-he { display: none !important; }
+        [lang="he"] .lang-fr { display: none !important; }
+        html[lang="fr"] { direction: ltr; }
+        html[lang="fr"] .glass-overlay { border-right: none; }
+
+        /* FIXED NAVIGATION BAR */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            background: rgba(10, 17, 40, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .main-nav.scrolled {
+            background: rgba(10, 17, 40, 0.97);
+            padding: 0.7rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255,255,255,0.2);
+        }
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        @media (max-width: 768px) {
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(5, 5, 5, 0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.4s;
+            }
+            .nav-links.open { opacity: 1; pointer-events: all; }
+            .nav-links a { font-size: 1.2rem; }
+            .nav-logo { font-size: 1.2rem; }
+            .nav-divider { display: none; }
+        }
+        .lang-btn {
+            background: rgba(212,175,55,0.15);
+            border: 1px solid rgba(212,175,55,0.4);
+            color: var(--gold);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+        .lang-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* GOLD SHIMMER ANIMATION */
+        @keyframes gold-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-gold {
+            background: linear-gradient(90deg, #B8941F, #F5E6B8, #D4AF37, #F5E6B8, #B8941F);
+            background-size: 200% auto;
+            animation: gold-shimmer 4s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* GOLD DIVIDER */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            max-width: 300px;
+            margin: 2rem auto;
+        }
+
+        /* SHAPE SHIFTING CORE */
+        .shape-shift-bg { position: relative; overflow: hidden; }
+        .shape-shift-item {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .shape-shift-item.active { opacity: 1; }
+        .content-overlay { position: relative; z-index: 10; width: 100%; }
+
+        /* GLASS OVERLAY */
+        .glass-overlay {
+            background: rgba(10, 17, 40, 0.45);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+        }
+        .hero .shape-shift-item { opacity: 0; filter: grayscale(10%); }
+        .hero .shape-shift-item.active { opacity: 0.25; filter: grayscale(10%); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,17,40,0.88) 0%, rgba(26,26,46,0.75) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .hero-date {
+            display: inline-block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; position: relative; z-index: 10; }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--grey);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        /* URGENT BLITZ SECTION */
+        .blitz-section {
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+        }
+        .blitz-section h2 { color: var(--white); }
+        .blitz-section .section-sub { color: rgba(255,255,255,0.7); }
+        .blitz-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B35, #FF4444);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            animation: pulse-urgent 2s ease-in-out infinite;
+        }
+        @keyframes pulse-urgent {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,68,68,0.4); }
+            50% { box-shadow: 0 0 20px 5px rgba(255,68,68,0.2); }
+        }
+        .blitz-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            transition: all 0.4s;
+        }
+        .blitz-card:hover {
+            border-color: rgba(212,175,55,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .blitz-card h3 { color: var(--gold); font-size: 1.6rem; }
+        .blitz-items {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .blitz-items li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            padding-right: 2rem;
+        }
+        .blitz-items li::before {
+            content: attr(data-num);
+            position: absolute;
+            right: 0;
+            color: var(--gold);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        html[lang="fr"] .blitz-items li { padding-right: 0; padding-left: 2rem; }
+        html[lang="fr"] .blitz-items li::before { right: auto; left: 0; }
+        .blitz-price {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(212,175,55,0.3);
+        }
+        .blitz-price .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .blitz-note {
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* SETUP SECTION */
+        .setup-section { background: #080808; }
+        .setup-section h2 { color: var(--gold); }
+        .setup-section .section-sub { color: rgba(255,255,255,0.5); }
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .setup-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border-top: 3px solid var(--gold);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-top: 3px solid var(--gold);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: all 0.4s;
+            position: relative;
+        }
+        .setup-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+            border-color: rgba(212,175,55,0.4);
+        }
+        .setup-card.featured {
+            background: rgba(212,175,55,0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-top: 3px solid var(--gold);
+        }
+        .setup-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .setup-card h3 { color: var(--gold); }
+        .setup-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 0.8rem;
+        }
+        .setup-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .setup-card ul li {
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+            font-size: 0.92rem;
+            position: relative;
+            color: rgba(255,255,255,0.75);
+        }
+        html[lang="fr"] .setup-card ul li { padding-right: 0; padding-left: 1.5rem; }
+        .setup-card ul li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        html[lang="fr"] .setup-card ul li::before { right: auto; left: 0; }
+        .price-tag {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(212,175,55,0.2);
+        }
+        .price-tag .old-price {
+            text-decoration: line-through;
+            color: var(--grey);
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+        html[lang="fr"] .price-tag .old-price { margin-left: 0; margin-right: 0.5rem; }
+        .price-tag .new-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .price-tag .savings {
+            display: inline-block;
+            background: rgba(34,197,94,0.1);
+            color: #16a34a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        html[lang="fr"] .price-tag .savings { margin-right: 0; margin-left: 0.5rem; }
+        .total-setup {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .total-setup .label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.5rem;
+        }
+        .total-setup .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* RETAINER SECTION */
+        .retainer-section {
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+        }
+        .retainer-section .shape-shift-item { opacity: 0; filter: grayscale(10%); }
+        .retainer-section .shape-shift-item.active { opacity: 0.15; filter: grayscale(10%); }
+        .retainer-section h2 { color: var(--white); }
+        .retainer-section .section-sub { color: rgba(255,255,255,0.7); }
+        .retainer-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+        }
+        .retainer-item {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            transition: all 0.4s;
+        }
+        .retainer-item:hover {
+            border-color: rgba(212,175,55,0.4);
+            background: rgba(255,255,255,0.05);
+        }
+        .retainer-item .item-content { flex: 1; }
+        .retainer-item h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .retainer-item p { color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.6; }
+        .retainer-item .value-tag {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            margin-top: 0.5rem;
+        }
+        .retainer-item .item-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            white-space: nowrap;
+            min-width: 130px;
+            text-align: center;
+        }
+        .retainer-item .item-price span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Heebo', sans-serif;
+        }
+        .retainer-total {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .retainer-total .label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.5rem;
+        }
+        .retainer-total .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .retainer-total .amount span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.6);
+            font-family: 'Heebo', sans-serif;
+        }
+
+        /* AD BUDGET SECTION */
+        .adbudget-section { background: #080808; }
+        .adbudget-section h2 { color: var(--gold); }
+        .adbudget-section .section-sub { color: rgba(255,255,255,0.5); }
+        .adbudget-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(212,175,55,0.15);
+        }
+        .adbudget-card h3 { color: var(--white); }
+        .adbudget-card p, .adbudget-card span { color: rgba(255,255,255,0.7); }
+        .adbudget-card h3 { text-align: center; font-size: 1.6rem; margin-bottom: 2rem; }
+        .budget-bar {
+            display: flex;
+            gap: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 40px;
+            margin-bottom: 2rem;
+        }
+        .budget-bar .tiktok-bar {
+            background: linear-gradient(90deg, #FF0050, #00F2EA);
+            flex: 65;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .budget-bar .fb-bar {
+            background: linear-gradient(90deg, #1877F2, #42B72A);
+            flex: 35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .budget-items {
+            list-style: none;
+            padding: 0;
+        }
+        .budget-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+            font-size: 0.95rem;
+        }
+        .budget-items li:last-child { border-bottom: none; }
+        .budget-items .platform-name { color: rgba(255,255,255,0.75); }
+        .budget-items .platform-amount {
+            font-weight: 600;
+            color: var(--gold);
+        }
+        .budget-total {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(212,175,55,0.3);
+        }
+        .budget-total .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .budget-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--grey);
+            line-height: 1.5;
+        }
+
+        /* RECAP SECTION */
+        .recap-section {
+            background: var(--dark);
+            color: var(--white);
+        }
+        .recap-section h2 { color: var(--gold); }
+        .recap-section .section-sub { color: rgba(255,255,255,0.6); }
+        .recap-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .recap-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.4s;
+        }
+        .recap-card:hover {
+            border-color: rgba(212,175,55,0.3);
+            transform: translateY(-4px);
+        }
+        .recap-card.total-card {
+            background: rgba(212,175,55,0.08);
+            border: 2px solid rgba(212,175,55,0.4);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.1);
+        }
+        .recap-card .label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .recap-card .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .recap-card.total-card .amount { color: var(--gold); font-size: 2.2rem; }
+        .recap-card .amount span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Heebo', sans-serif;
+        }
+        .recap-card.total-card .amount span { color: rgba(212,175,55,0.6); }
+        .recap-approx {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* PHASE 2 SECTION */
+        .phase2-section { background: #080808; }
+        .phase2-section h2 { color: var(--gold); }
+        .phase2-section .section-sub { color: rgba(255,255,255,0.5); }
+        .phase2-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .phase2-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid rgba(212,175,55,0.3);
+            color: var(--gold-dark);
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        .phase2-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 750px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(212,175,55,0.15);
+        }
+        .phase2-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+        .phase2-list {
+            list-style: none;
+            padding: 0;
+        }
+        .phase2-list li {
+            padding: 1rem 0;
+            padding-right: 2.5rem;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            color: rgba(255,255,255,0.75);
+        }
+        html[lang="fr"] .phase2-list li { padding-right: 0; padding-left: 2.5rem; }
+        .phase2-list li::before {
+            content: attr(data-num);
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        html[lang="fr"] .phase2-list li::before { right: auto; left: 0; }
+        .phase2-pricing-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.2rem;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+        .cta-section .shape-shift-item { opacity: 0; filter: grayscale(10%); }
+        .cta-section .shape-shift-item.active { opacity: 0.15; filter: grayscale(10%); }
+        .cta-section h2 { color: var(--white); margin-bottom: 1.5rem; }
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        .cta-btn.primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .cta-btn.primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.3);
+        }
+        .cta-btn.secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .cta-btn.secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .cta-signature {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .cta-signature strong {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem 2rem 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212,175,55,0.1);
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        .footer-nav a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer-nav a:hover { color: var(--gold); }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+            max-width: 200px;
+            margin: 1rem auto;
+        }
+        .footer-confidential {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .main-nav { padding: 0.8rem 1rem; }
+            .hero h1 { font-size: 2rem; }
+            section { padding: 3rem 1.5rem; }
+            .setup-grid { grid-template-columns: 1fr; }
+            .recap-grid { grid-template-columns: 1fr; }
+            .retainer-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .retainer-item .item-price {
+                min-width: auto;
+                text-align: right;
+            }
+            html[lang="fr"] .retainer-item .item-price { text-align: left; }
+            .glass-overlay { padding: 1.5rem; }
+            .blitz-card { padding: 1.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- FIXED NAVIGATION -->
+<nav class="main-nav" id="mainNav">
+    <a href="landing_gold_time_final.html" class="nav-logo">Gold Time</a>
+    <div class="nav-hamburger" id="navHamburger" onclick="this.classList.toggle('active'); document.getElementById('navLinks').classList.toggle('open');">
+        <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="landing_gold_time_final.html">
+            <span class="lang-he">עמוד הבית</span>
+            <span class="lang-fr">Accueil</span>
+        </a></li>
+        <li class="nav-divider"></li>
+        <li><a href="pessah_collection.html">
+            <span class="lang-he">קולקציית פסח</span>
+            <span class="lang-fr">Collection Pessah</span>
+        </a></li>
+        <li class="nav-divider"></li>
+        <li><a href="#blitz">
+            <span class="lang-he">בליץ פסח</span>
+            <span class="lang-fr">Blitz Pessah</span>
+        </a></li>
+        <li class="nav-divider"></li>
+        <li><a href="#recap">
+            <span class="lang-he">סיכום</span>
+            <span class="lang-fr">Sommaire</span>
+        </a></li>
+        <li>
+            <button class="lang-btn" onclick="toggleLang()">
+                <span class="lang-he">FR</span>
+                <span class="lang-fr">עב</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<!-- ========================================== -->
+<!-- SECTION 1: HERO -->
+<!-- ========================================== -->
+<section class="hero shape-shift-bg" id="hero">
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_and_202603191612.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Gold Time Luxury">
+    <video class="shape-shift-item" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_mechanism_202603191615.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="content-overlay hero-content">
+        <div class="glass-overlay" style="max-width: 800px;">
+            <div class="hero-badge">DreamNova Consult</div>
+            <h1 class="shimmer-gold">Gold Time Jerusalem</h1>
+            <p>
+                <span class="lang-he">תכנית טרנספורמציה דיגיטלית</span>
+                <span class="lang-fr">Plan de Transformation Digitale</span>
+            </p>
+            <div class="gold-divider"></div>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.7);">
+                <span class="lang-he">מאתר קטלוג ותוכן וידאו ועד לחנות e-commerce מלאה — תוכנית מלאה ב-6 שלבים</span>
+                <span class="lang-fr">Du catalogue et contenu vidéo jusqu'au e-commerce complet — plan en 6 étapes</span>
+            </p>
+            <div class="hero-date">Mars 2026</div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('blitz').scrollIntoView({behavior:'smooth'})">
+        <svg width="24" height="24" fill="none" stroke="rgba(212,175,55,0.8)" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 2: BLITZ PESSAH (URGENT) -->
+<!-- ========================================== -->
+<section class="blitz-section" id="blitz">
+    <div class="container">
+        <div class="reveal" style="text-align: center;">
+            <div class="blitz-badge">
+                <span class="lang-he">הזדמנות מיידית — 13 ימים לפסח</span>
+                <span class="lang-fr">Opportunit&eacute; Imm&eacute;diate — 13 jours avant Pessah</span>
+            </div>
+        </div>
+
+        <h2 class="reveal shimmer-gold" style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+            <span class="lang-he">מבצע ״בליץ פסח״</span>
+            <span class="lang-fr">Offre &laquo; Blitz Pessah &raquo;</span>
+        </h2>
+        <p class="section-sub reveal">
+            <span class="lang-he">הזדמנות לנוכחות דיגיטלית מיידית לקראת החג</span>
+            <span class="lang-fr">Pr&eacute;sence digitale imm&eacute;diate avant la f&ecirc;te</span>
+        </p>
+
+        <div class="blitz-card reveal">
+            <ol class="blitz-items">
+                <li data-num="1">
+                    <strong>Landing Page Premium &laquo;Collection Pessah&raquo;</strong><br>
+                    <span class="lang-he">עיצוב בהתאמה אישית עם וידאו רקע AI</span>
+                    <span class="lang-fr">Design sur mesure avec vid&eacute;o de fond IA</span>
+                </li>
+                <li data-num="2">
+                    <strong class="lang-he">2 פוסטים מקצועיים לרשתות חברתיות</strong>
+                    <strong class="lang-fr">2 Posts Professionnels R&eacute;seaux Sociaux</strong><br>
+                    <span class="lang-he">Facebook (עברית+צרפתית) + TikTok (סרטון 15 שניות)</span>
+                    <span class="lang-fr">Facebook (HE+FR) + TikTok (Vid&eacute;o 15s)</span>
+                </li>
+                <li data-num="3">
+                    <span class="lang-he">קופירייטינג דו-לשוני + אסטרטגיית תוכן</span>
+                    <span class="lang-fr">Copywriting bilingue + Strat&eacute;gie de contenu</span>
+                </li>
+            </ol>
+
+            <div class="blitz-price">
+                <div class="amount">2,500 &#8362;</div>
+            </div>
+
+            <div class="blitz-note">
+                <span class="lang-he">ניתן לקיזוז מלא מעלות ההקמה + החודש הראשון</span>
+                <span class="lang-fr">Enti&egrave;rement d&eacute;ductible du setup + premier mois</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 3: CONFIGURATION INITIALE -->
+<!-- ========================================== -->
+<section class="setup-section" id="setup">
+    <div class="container">
+        <h2 class="reveal">
+            <span class="lang-he">הגדרה ראשונית</span>
+            <span class="lang-fr">Configuration Initiale</span>
+        </h2>
+        <p class="section-sub reveal">
+            <span class="lang-he">תשלום חד-פעמי — הקמת התשתית הדיגיטלית</span>
+            <span class="lang-fr">Paiement unique — mise en place de l'infrastructure digitale</span>
+        </p>
+
+        <div class="setup-grid">
+            <!-- Card 1: Photo -->
+            <div class="setup-card reveal">
+                <div class="icon">&#128248;</div>
+                <h3>
+                    <span class="lang-he">סשן צילום מקצועי</span>
+                    <span class="lang-fr">S&eacute;ance Photo Professionnelle</span>
+                </h3>
+                <p>
+                    <span class="lang-he">צילומי מוצרים, חלון ראווה, אווירת בוטיק. איכות מגזין.</span>
+                    <span class="lang-fr">Photos produits, vitrine, ambiance boutique. Qualit&eacute; magazine.</span>
+                </p>
+                <div class="price-tag">
+                    <span class="savings">
+                        <span class="lang-he">חיסכון 67%</span>
+                        <span class="lang-fr">-67%</span>
+                    </span>
+                    <span class="old-price">3,000 &#8362;</span>
+                    <br>
+                    <span class="new-price">1,000 &#8362;</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Site (Featured) -->
+            <div class="setup-card featured reveal reveal-delay-1">
+                <div class="icon">&#127760;</div>
+                <h3>
+                    <span class="lang-he">אתר קטלוג פרימיום</span>
+                    <span class="lang-fr">Site Catalogue Premium</span>
+                </h3>
+                <p>
+                    <span class="lang-he">ויטרינה מודרנית, קטלוג מלא, דו-לשוני עברית/אנגלית, רספונסיבי למובייל, מותאם לתיירים.</span>
+                    <span class="lang-fr">Vitrine moderne, catalogue complet, bilingue HE/EN, responsive mobile, optimis&eacute; touristes.</span>
+                </p>
+                <ul>
+                    <li>
+                        <span class="lang-he">קטלוג אינטראקטיבי</span>
+                        <span class="lang-fr">Catalogue interactif</span>
+                    </li>
+                    <li>
+                        <span class="lang-he">עמוד ״הסיפור שלנו״ — 60 שנה</span>
+                        <span class="lang-fr">Page &laquo; Notre Histoire &raquo; 60 ans</span>
+                    </li>
+                    <li>
+                        <span class="lang-he">SEO מקומי Google Maps (2 סניפים)</span>
+                        <span class="lang-fr">SEO local Google Maps (2 boutiques)</span>
+                    </li>
+                    <li>
+                        <span class="lang-he">דומיין + אחסון שנה ראשונה כלולים</span>
+                        <span class="lang-fr">Domaine + h&eacute;bergement 1&egrave;re ann&eacute;e inclus</span>
+                    </li>
+                </ul>
+                <div class="price-tag">
+                    <span class="new-price">5,000 &#8362;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Setup -->
+        <div class="total-setup reveal">
+            <div class="label">
+                <span class="lang-he">סה״כ הקמה</span>
+                <span class="lang-fr">Total Setup</span>
+            </div>
+            <div class="amount">6,000 &#8362;</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 4: GESTION MENSUELLE (RETAINER) -->
+<!-- ========================================== -->
+<section class="retainer-section shape-shift-bg" id="retainer">
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_mechanism_202603191615.mp4" type="video/mp4">
+    </video>
+
+    <div class="content-overlay">
+        <div class="container">
+            <h2 class="reveal shimmer-gold">
+                <span class="lang-he">ניהול חודשי</span>
+                <span class="lang-fr">Gestion Mensuelle</span>
+            </h2>
+            <p class="section-sub reveal">
+                <span class="lang-he">ריטיינר — פיילוט 6 חודשים</span>
+                <span class="lang-fr">Retainer — Pilote 6 mois</span>
+            </p>
+
+            <div class="retainer-grid">
+                <!-- Item 1: Social + Video -->
+                <div class="retainer-item reveal">
+                    <div class="item-content">
+                        <h3>
+                            <span class="lang-he">רשתות חברתיות + תוכן וידאו AI</span>
+                            <span class="lang-fr">R&eacute;seaux Sociaux + Contenu Vid&eacute;o IA</span>
+                        </h3>
+                        <p>
+                            <span class="lang-he">Facebook + TikTok, 4 פוסטים/שבוע, וידאו Google Flow, קופירייטינג דו-לשוני</span>
+                            <span class="lang-fr">Facebook + TikTok, 4 posts/sem, Vid&eacute;o Google Flow, Copywriting bilingue</span>
+                        </p>
+                        <div class="value-tag">
+                            <span class="lang-he">וידאו 30 שניות: 500-600&#8362;/יחידה — כלול</span>
+                            <span class="lang-fr">vid&eacute;o 30s : 500-600&#8362;/unit&eacute; — inclus</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        2,000 &#8362;
+                        <span>
+                            <span class="lang-he">לחודש</span>
+                            <span class="lang-fr">/mois</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Paid Ads Management -->
+                <div class="retainer-item reveal reveal-delay-1">
+                    <div class="item-content">
+                        <h3>
+                            <span class="lang-he">ניהול פרסום ממומן</span>
+                            <span class="lang-fr">Gestion Publicit&eacute; Payante</span>
+                        </h3>
+                        <p>
+                            <span class="lang-he">Meta Business Manager + TikTok Business Manager. בדיקות A/B, דוח חודשי, אופטימיזציה שוטפת.</span>
+                            <span class="lang-fr">Meta Business Manager + TikTok Business Manager. A/B Testing, rapport mensuel, optimisation continue.</span>
+                        </p>
+                    </div>
+                    <div class="item-price">
+                        500 &#8362;
+                        <span>
+                            <span class="lang-he">לחודש</span>
+                            <span class="lang-fr">/mois</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Site Maintenance -->
+                <div class="retainer-item reveal reveal-delay-2">
+                    <div class="item-content">
+                        <h3>
+                            <span class="lang-he">תחזוקת אתר</span>
+                            <span class="lang-fr">Maintenance Site Web</span>
+                        </h3>
+                        <p>
+                            <span class="lang-he">עדכון תמונות ומוצרים — עד 2 שינויים/חודש</span>
+                            <span class="lang-fr">Mise &agrave; jour photos et produits — jusqu'&agrave; 2 modifications/mois</span>
+                        </p>
+                    </div>
+                    <div class="item-price">
+                        300 &#8362;
+                        <span>
+                            <span class="lang-he">לחודש</span>
+                            <span class="lang-fr">/mois</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retainer Total -->
+            <div class="retainer-total reveal">
+                <div class="label">
+                    <span class="lang-he">סה״כ חודשי DreamNova</span>
+                    <span class="lang-fr">Total mensuel DreamNova</span>
+                </div>
+                <div class="amount">2,800 &#8362; <span>
+                    <span class="lang-he">לחודש</span>
+                    <span class="lang-fr">/mois</span>
+                </span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 5: BUDGET PUBLICITAIRE DIRECT -->
+<!-- ========================================== -->
+<section class="adbudget-section" id="adbudget">
+    <div class="container">
+        <h2 class="reveal">
+            <span class="lang-he">תקציב פרסום ישיר</span>
+            <span class="lang-fr">Budget Publicitaire Direct</span>
+        </h2>
+        <p class="section-sub reveal">
+            <span class="lang-he">משולם ישירות לפלטפורמות</span>
+            <span class="lang-fr">Pay&eacute; directement aux plateformes</span>
+        </p>
+
+        <div class="adbudget-card reveal">
+            <div class="budget-bar">
+                <div class="tiktok-bar">TikTok ~65%</div>
+                <div class="fb-bar">Meta ~35%</div>
+            </div>
+
+            <ul class="budget-items">
+                <li>
+                    <span class="platform-name">
+                        <strong>TikTok</strong>
+                        <br><small style="color: var(--grey);">
+                            <span class="lang-he">רכישת קהל צעיר 18-40</span>
+                            <span class="lang-fr">Acquisition jeune public 18-40</span>
+                        </small>
+                    </span>
+                    <span class="platform-amount">600-700 &#8362;</span>
+                </li>
+                <li>
+                    <span class="platform-name">
+                        <strong>Facebook / Meta</strong>
+                        <br><small style="color: var(--grey);">
+                            <span class="lang-he">נאמנות קהל היסטורי + עולים</span>
+                            <span class="lang-fr">Fid&eacute;lisation historique + Olim</span>
+                        </small>
+                    </span>
+                    <span class="platform-amount">300-400 &#8362;</span>
+                </li>
+                <li>
+                    <span class="platform-name">
+                        <strong>
+                            <span class="lang-he">דומיין</span>
+                            <span class="lang-fr">Domaine</span>
+                        </strong>
+                        <br><small style="color: var(--grey);">
+                            <span class="lang-he">משולם ישירות לרשם הדומיינים</span>
+                            <span class="lang-fr">Pay&eacute; directement au registrar</span>
+                        </small>
+                    </span>
+                    <span class="platform-amount">~11$/
+                        <span class="lang-he">חודש</span>
+                        <span class="lang-fr">mois</span>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="budget-total">
+                <div style="font-size: 0.85rem; color: var(--grey); margin-bottom: 0.3rem;">
+                    <span class="lang-he">סה״כ תקציב פרסום</span>
+                    <span class="lang-fr">Total Budget Publicitaire</span>
+                </div>
+                <div class="amount">1,000 &#8362;/
+                    <span class="lang-he">חודש</span>
+                    <span class="lang-fr">mois</span>
+                </div>
+            </div>
+            <div class="budget-note">
+                <span class="lang-he">החלוקה מותאמת מדי חודש לפי ביצועים</span>
+                <span class="lang-fr">R&eacute;partition ajust&eacute;e mensuellement selon performance</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 6: RECAPITULATIF -->
+<!-- ========================================== -->
+<section class="recap-section" id="recap">
+    <div class="container">
+        <h2 class="reveal shimmer-gold">
+            <span class="lang-he">סיכום חודשי</span>
+            <span class="lang-fr">R&eacute;capitulatif Mensuel</span>
+        </h2>
+        <div class="gold-divider reveal"></div>
+        <p class="section-sub reveal" style="margin-top: 1rem;">
+            <span class="lang-he">תמונת מצב — עלות חודשית כוללת</span>
+            <span class="lang-fr">Vue d'ensemble — co&ucirc;t mensuel global</span>
+        </p>
+
+        <div class="recap-grid">
+            <div class="recap-card reveal">
+                <div class="label">
+                    <span class="lang-he">DreamNova<br>(ניהול + תוכן)</span>
+                    <span class="lang-fr">DreamNova<br>(gestion + contenu)</span>
+                </div>
+                <div class="amount">2,800&#8362; <span>
+                    <span class="lang-he">לחודש</span>
+                    <span class="lang-fr">/mois</span>
+                </span></div>
+            </div>
+            <div class="recap-card reveal reveal-delay-1">
+                <div class="label">
+                    <span class="lang-he">תקציב פרסום<br>(פלטפורמות)</span>
+                    <span class="lang-fr">Budget Pub<br>(plateformes)</span>
+                </div>
+                <div class="amount">1,000&#8362; <span>
+                    <span class="lang-he">לחודש</span>
+                    <span class="lang-fr">/mois</span>
+                </span></div>
+            </div>
+            <div class="recap-card total-card reveal reveal-delay-2">
+                <div class="label">
+                    <span class="lang-he">סה״כ</span>
+                    <span class="lang-fr">Total</span>
+                </div>
+                <div class="amount">~3,850&#8362; <span>
+                    <span class="lang-he">לחודש</span>
+                    <span class="lang-fr">/mois</span>
+                </span></div>
+            </div>
+        </div>
+        <p class="recap-approx reveal">
+            <span class="lang-he">* כולל דומיין ~50&#8362;/חודש</span>
+            <span class="lang-fr">* Incluant domaine ~50&#8362;/mois</span>
+        </p>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 7: PHASE 2 — E-COMMERCE -->
+<!-- ========================================== -->
+<section class="phase2-section" id="phase2">
+    <div class="container">
+        <div class="phase2-header reveal">
+            <div class="phase2-badge">
+                <span class="lang-he">שלב 2 — אלול / ספטמבר 2026</span>
+                <span class="lang-fr">Phase 2 — Eloul / Septembre 2026</span>
+            </div>
+            <h2>
+                <span class="lang-he">מעבר ל-E-Commerce</span>
+                <span class="lang-fr">Passage au E-Commerce</span>
+            </h2>
+            <p class="section-sub" style="margin-bottom: 0;">
+                <span class="lang-he">בדיוק לפני ראש השנה</span>
+                <span class="lang-fr">Juste avant Roch Hachana</span>
+            </p>
+        </div>
+
+        <div class="phase2-card reveal">
+            <p>
+                <span class="lang-he">בהתאם לתוצאות הפיילוט בן 6 החודשים, נהפוך את הקטלוג לחנות e-commerce מלאה — בדיוק לפני ראש השנה.</span>
+                <span class="lang-fr">Selon les r&eacute;sultats du pilote de 6 mois, nous transformerons le catalogue en boutique e-commerce compl&egrave;te — juste avant Roch Hachana.</span>
+            </p>
+
+            <ol class="phase2-list">
+                <li data-num="1">
+                    <span class="lang-he">מערכת הזמנות אונליין מלאה עם סל קניות וסליקה מאובטחת</span>
+                    <span class="lang-fr">Syst&egrave;me de commande en ligne complet avec panier et paiement s&eacute;curis&eacute;</span>
+                </li>
+                <li data-num="2">
+                    <span class="lang-he">סנכרון מלאי בין 2 הסניפים (קינג ג׳ורג׳ ומלחה)</span>
+                    <span class="lang-fr">Synchronisation du stock entre les 2 boutiques (King George &amp; Malha)</span>
+                </li>
+                <li data-num="3">
+                    <span class="lang-he">קמפיין שיווקי ממוקד ״העניקו נצח לקראת השנה החדשה״</span>
+                    <span class="lang-fr">Campagne marketing cibl&eacute;e &laquo; Offrez l'&eacute;ternit&eacute; pour la nouvelle ann&eacute;e &raquo;</span>
+                </li>
+                <li data-num="4">
+                    <span class="lang-he">מערכת משלוחים ולוגיסטיקה</span>
+                    <span class="lang-fr">Syst&egrave;me de livraison et logistique</span>
+                </li>
+                <li data-num="5">
+                    <span class="lang-he">אינטגרציית WhatsApp Business לשירות לקוחות</span>
+                    <span class="lang-fr">Int&eacute;gration WhatsApp Business pour service client</span>
+                </li>
+            </ol>
+
+            <div class="phase2-pricing-note">
+                <span class="lang-he">פרטי התמחור יימסרו בהתאם להיקף הפרויקט</span>
+                <span class="lang-fr">Les d&eacute;tails tarifaires seront communiqu&eacute;s selon l'ampleur du projet</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 8: CTA -->
+<!-- ========================================== -->
+<section class="cta-section shape-shift-bg" id="contact">
+    <video class="shape-shift-item active" autoplay muted loop playsinline>
+        <source src="flow images and videos/Luxury_watch_and_202603191612.mp4" type="video/mp4">
+    </video>
+    <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Gold Time">
+
+    <div class="hero-overlay"></div>
+
+    <div class="content-overlay">
+        <div class="container">
+            <h2 class="reveal shimmer-gold" style="font-size: 2.5rem;">
+                <span class="lang-he">בואו נתחיל</span>
+                <span class="lang-fr">Commen&ccedil;ons</span>
+            </h2>
+            <p class="reveal" style="color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.7;">
+                <span class="lang-he">מוכנים להוביל את גולד טיים לעידן הדיגיטלי? צרו קשר עכשיו.</span>
+                <span class="lang-fr">Pr&ecirc;ts &agrave; propulser Gold Time dans l'&egrave;re digitale ? Contactez-nous.</span>
+            </p>
+
+            <div class="cta-buttons reveal">
+                <a href="tel:02-6255883" class="cta-btn primary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    02-6255883
+                </a>
+                <a href="https://wa.me/972585141492" target="_blank" class="cta-btn secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+
+            <div class="cta-signature reveal">
+                <strong>David Amor</strong><br>
+                DreamNova Consult — Jerusalem
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- SECTION 9: FOOTER -->
+<!-- ========================================== -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">Gold Time Jerusalem</div>
+        <ul class="footer-nav">
+            <li><a href="landing_gold_time_final.html">
+                <span class="lang-he">עמוד הבית</span>
+                <span class="lang-fr">Accueil</span>
+            </a></li>
+            <li><a href="pessah_collection.html">
+                <span class="lang-he">קולקציית פסח</span>
+                <span class="lang-fr">Collection Pessah</span>
+            </a></li>
+            <li><a href="#blitz">
+                <span class="lang-he">בליץ פסח</span>
+                <span class="lang-fr">Blitz Pessah</span>
+            </a></li>
+            <li><a href="#contact">
+                <span class="lang-he">צור קשר</span>
+                <span class="lang-fr">Contact</span>
+            </a></li>
+        </ul>
+        <div class="footer-divider"></div>
+        <p>&copy; 2026 DreamNova Consult &mdash; Infrastructure AI &amp; Transformation Digitale</p>
+        <p class="footer-confidential">
+            <span class="lang-he">מסמך סודי — בתוקף 30 יום</span>
+            <span class="lang-fr">Document Confidentiel — Valable 30 Jours</span>
+        </p>
+    </div>
+</footer>
+
+<script>
+    // ========================================
+    // LANGUAGE TOGGLE
+    // ========================================
+    function toggleLang() {
+        const html = document.documentElement;
+        if (html.getAttribute('lang') === 'he') {
+            html.setAttribute('lang', 'fr');
+            html.setAttribute('dir', 'ltr');
+        } else {
+            html.setAttribute('lang', 'he');
+            html.setAttribute('dir', 'rtl');
+        }
+    }
+
+    // ========================================
+    // NAVIGATION SCROLL EFFECT
+    // ========================================
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // ========================================
+    // SHAPE SHIFTING BACKGROUNDS (cross-fade)
+    // ========================================
+    document.addEventListener("DOMContentLoaded", () => {
+        const shapeShiftZones = document.querySelectorAll('.shape-shift-bg');
+
+        shapeShiftZones.forEach(zone => {
+            const items = zone.querySelectorAll('.shape-shift-item');
+            if (items.length > 1) {
+                let currentIndex = 0;
+                setInterval(() => {
+                    items[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % items.length;
+                    items[currentIndex].classList.add('active');
+                }, 4000);
+            }
+        });
+    });
+
+    // ========================================
+    // SCROLL REVEAL (IntersectionObserver)
+    // ========================================
+    document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+</html>

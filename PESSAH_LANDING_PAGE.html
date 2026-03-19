@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Time Jerusalem — Pessah Collection 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Heebo:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --gold-light: #F5E6B8; --navy: #050A1A; --dark: #030303; }
+        body { font-family: 'Heebo', sans-serif; background: var(--dark); color: #f3f4f6; }
+        .font-serif { font-family: 'Cinzel', serif; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        .shimmer {
+            background: linear-gradient(90deg, #b8860b, #fcc200, #fff, #fcc200, #b8860b);
+            background-size: 200% auto; animation: shimmer 5s linear infinite;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+        .video-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+        .video-bg video { min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.25; filter: contrast(1.1) brightness(0.7); }
+        .glass { background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); border: 1px solid rgba(212,175,55,0.15); border-radius: 24px; }
+        .glass:hover { border-color: rgba(212,175,55,0.4); }
+        [lang="fr"] .lang-he, [lang="fr"] .lang-en { display: none !important; }
+        [lang="he"] .lang-fr, [lang="he"] .lang-en { display: none !important; }
+        [lang="en"] .lang-he, [lang="en"] .lang-fr { display: none !important; }
+        html[lang="fr"], html[lang="en"] { direction: ltr; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .countdown-num { font-variant-numeric: tabular-nums; }
+        @keyframes candleFlicker {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .candle { animation: candleFlicker 3s ease-in-out infinite; }
+        .promo-badge {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(220,38,38,0); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 px-6 md:px-10 py-6 flex justify-between items-center pointer-events-none bg-gradient-to-b from-black/60 to-transparent">
+        <div class="font-serif text-gold text-xl md:text-2xl tracking-[0.4em] font-bold pointer-events-auto">GOLD TIME</div>
+        <div class="pointer-events-auto flex gap-2">
+            <button onclick="setLang('he')" id="btn-he" class="px-3 py-1.5 border border-gold/40 text-[9px] tracking-widest font-black uppercase bg-gold text-black transition-all">עב</button>
+            <button onclick="setLang('fr')" id="btn-fr" class="px-3 py-1.5 border border-gold/40 text-[9px] tracking-widest font-black uppercase text-gold hover:bg-gold/10 transition-all">FR</button>
+            <button onclick="setLang('en')" id="btn-en" class="px-3 py-1.5 border border-gold/40 text-[9px] tracking-widest font-black uppercase text-gold hover:bg-gold/10 transition-all">EN</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="" type="video/mp4">
+                <!-- Antigravity insère la vidéo Pessah Google Flow ici -->
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#030303] z-10"></div>
+        </div>
+
+        <div class="relative z-20 max-w-5xl px-6">
+            <!-- Promo badge -->
+            <div class="mb-8 reveal">
+                <span class="promo-badge inline-block px-6 py-2 rounded-full text-white text-xs tracking-widest font-bold uppercase">
+                    <span class="lang-he">🕯️ מהדורה מוגבלת לפסח</span>
+                    <span class="lang-fr">🕯️ Édition Limitée Pessah</span>
+                    <span class="lang-en">🕯️ Limited Passover Edition</span>
+                </span>
+            </div>
+
+            <h1 class="font-serif text-6xl md:text-9xl font-bold mb-6 shimmer tracking-tighter">GOLD TIME</h1>
+
+            <h2 class="font-luxury italic text-2xl md:text-5xl text-white/90 mb-4 reveal">
+                <span class="lang-he">קולקציית פסח תשפ״ו</span>
+                <span class="lang-fr">Collection Pessah 2026</span>
+                <span class="lang-en">Passover Collection 2026</span>
+            </h2>
+
+            <p class="text-gold text-base md:text-xl font-light tracking-widest uppercase mb-12 reveal">
+                <span class="lang-he">ירושלים — מאז 1966</span>
+                <span class="lang-fr">Jérusalem — Depuis 1966</span>
+                <span class="lang-en">Jerusalem — Since 1966</span>
+            </p>
+
+            <div class="h-px w-16 bg-gold mx-auto mb-12"></div>
+
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light mb-12 reveal lang-he">
+                60 שנות מסורת ויוקרה בלב ירושלים.<br>
+                השנה, תנו למישהו שאתם אוהבים מתנה שתישאר לנצח.
+            </p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light mb-12 reveal lang-fr">
+                60 ans de tradition et de luxe au cœur de Jérusalem.<br>
+                Cette année, offrez un cadeau qui traversera le temps.
+            </p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light mb-12 reveal lang-en">
+                60 years of tradition and luxury in the heart of Jerusalem.<br>
+                This year, give a gift that will last forever.
+            </p>
+
+            <div class="reveal">
+                <a href="#collection" class="inline-block bg-gold text-black px-10 py-4 font-black uppercase text-sm tracking-widest hover:bg-white hover:scale-105 transition-all">
+                    <span class="lang-he">לצפייה בקולקציה ←</span>
+                    <span class="lang-fr">Découvrir la Collection ←</span>
+                    <span class="lang-en">Discover the Collection ←</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <div class="w-px h-16 bg-gradient-to-b from-gold to-transparent animate-bounce"></div>
+        </div>
+    </header>
+
+    <!-- COUNTDOWN -->
+    <section class="py-16 bg-gradient-to-r from-[#0a0000] via-[#050505] to-[#0a0000] border-y border-gold/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-he">הספירה לאחור לחג החירות</p>
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-fr">Compte à rebours vers la liberté</p>
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-en">Countdown to the Festival of Freedom</p>
+
+            <div class="flex justify-center gap-6 md:gap-12" id="countdown">
+                <div class="text-center">
+                    <div class="text-5xl md:text-7xl font-black text-white countdown-num" id="days">13</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-he">ימים</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-fr">Jours</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-en">Days</div>
+                </div>
+                <div class="text-5xl md:text-7xl text-gold/30 font-light">:</div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-7xl font-black text-white countdown-num" id="hours">00</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-he">שעות</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-fr">Heures</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-en">Hours</div>
+                </div>
+                <div class="text-5xl md:text-7xl text-gold/30 font-light">:</div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-7xl font-black text-white countdown-num" id="mins">00</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-he">דקות</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-fr">Minutes</div>
+                    <div class="text-gold text-[10px] uppercase tracking-widest mt-2 lang-en">Minutes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="py-32 px-6 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="font-serif text-4xl md:text-6xl text-white uppercase tracking-wider mb-4">
+                    <span class="lang-he">קולקציית פסח</span>
+                    <span class="lang-fr">Collection Pessah</span>
+                    <span class="lang-en">Passover Collection</span>
+                </h2>
+                <p class="text-gray-400 text-lg font-light lang-he">מתנות יוקרה בלתי נשכחות לחג החירות</p>
+                <p class="text-gray-400 text-lg font-light lang-fr">Des cadeaux d'exception inoubliables pour la fête de la liberté</p>
+                <p class="text-gray-400 text-lg font-light lang-en">Unforgettable luxury gifts for the festival of freedom</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Montres -->
+                <div class="glass p-8 reveal group cursor-pointer">
+                    <div class="aspect-[4/5] bg-gradient-to-b from-slate-900 to-black rounded-xl mb-6 overflow-hidden flex items-center justify-center border border-white/5">
+                        <span class="text-gray-700 text-sm italic text-center px-4">
+                            <!-- Antigravity: image montre Longines/Tissot sur fond noir -->
+                            [Image Nano Banana: Montre de luxe]
+                        </span>
+                    </div>
+                    <div class="text-gold text-[10px] uppercase tracking-[0.3em] mb-2 font-bold">Longines · Tissot · Certina</div>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-he">שעוני יוקרה שוויצריים</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-fr">Montres Suisses de Luxe</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-en">Swiss Luxury Watches</h3>
+                    <p class="text-gray-500 text-sm mb-4 lang-he">דיוק שוויצרי. עיצוב נצחי. מתנה שנמדדת בזמן.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-fr">Précision suisse. Design intemporel. Un cadeau qui se mesure au temps.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-en">Swiss precision. Timeless design. A gift measured in time.</p>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <span class="text-gray-600 text-xs lang-he">החל מ-</span>
+                            <span class="text-gray-600 text-xs lang-fr">À partir de</span>
+                            <span class="text-gray-600 text-xs lang-en">Starting from</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">800 ₪</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pandora -->
+                <div class="glass p-8 reveal group cursor-pointer" style="border-color:rgba(212,175,55,0.3)">
+                    <div class="absolute -top-3 right-6 bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-4 py-1 rounded-full lang-he" style="position:relative;display:inline-block;margin-bottom:8px;">הכי נמכר</div>
+                    <div class="absolute -top-3 right-6 bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-4 py-1 rounded-full lang-fr" style="position:relative;display:inline-block;margin-bottom:8px;">Best-seller</div>
+                    <div class="absolute -top-3 right-6 bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-4 py-1 rounded-full lang-en" style="position:relative;display:inline-block;margin-bottom:8px;">Best seller</div>
+                    <div class="aspect-[4/5] bg-gradient-to-b from-slate-900 to-black rounded-xl mb-6 overflow-hidden flex items-center justify-center border border-white/5">
+                        <span class="text-gray-700 text-sm italic text-center px-4">
+                            [Image Nano Banana: Bracelet Pandora charms]
+                        </span>
+                    </div>
+                    <div class="text-gold text-[10px] uppercase tracking-[0.3em] mb-2 font-bold">Pandora</div>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-he">תכשיטי פנדורה</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-fr">Bijoux Pandora</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-en">Pandora Jewelry</h3>
+                    <p class="text-gray-500 text-sm mb-4 lang-he">צ'ארמים, צמידים, טבעות. כל סיפור מתחיל עם חרוז.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-fr">Charms, bracelets, bagues. Chaque histoire commence par un bijou.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-en">Charms, bracelets, rings. Every story begins with a jewel.</p>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <span class="text-gray-600 text-xs lang-he">החל מ-</span>
+                            <span class="text-gray-600 text-xs lang-fr">À partir de</span>
+                            <span class="text-gray-600 text-xs lang-en">Starting from</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">149 ₪</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Or & Diamants -->
+                <div class="glass p-8 reveal group cursor-pointer">
+                    <div class="aspect-[4/5] bg-gradient-to-b from-slate-900 to-black rounded-xl mb-6 overflow-hidden flex items-center justify-center border border-white/5">
+                        <span class="text-gray-700 text-sm italic text-center px-4">
+                            [Image Nano Banana: Bague diamant or 18K]
+                        </span>
+                    </div>
+                    <div class="text-gold text-[10px] uppercase tracking-[0.3em] mb-2 font-bold">Gold Time Exclusive</div>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-he">זהב 18K ויהלומים</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-fr">Or 18 Carats & Diamants</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 lang-en">18K Gold & Diamonds</h3>
+                    <p class="text-gray-500 text-sm mb-4 lang-he">בגדים, צמידים, שרשראות ותליונים. יצירות אומנות בזהב טהור.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-fr">Bagues, bracelets, colliers et pendentifs. Des œuvres d'art en or pur.</p>
+                    <p class="text-gray-500 text-sm mb-4 lang-en">Rings, bracelets, necklaces and pendants. Works of art in pure gold.</p>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <span class="text-gray-600 text-xs lang-he">החל מ-</span>
+                            <span class="text-gray-600 text-xs lang-fr">À partir de</span>
+                            <span class="text-gray-600 text-xs lang-en">Starting from</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">500 ₪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTION PESSAH -->
+    <section class="py-32 bg-gold/5 border-y border-gold/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="candle text-6xl mb-8">🕯️</div>
+            <h2 class="font-serif text-4xl md:text-5xl text-white uppercase tracking-wider mb-6 reveal">
+                <span class="lang-he">מבצע פסח מיוחד</span>
+                <span class="lang-fr">Offre Spéciale Pessah</span>
+                <span class="lang-en">Special Passover Offer</span>
+            </h2>
+
+            <p class="text-gray-400 text-xl mb-16 reveal lang-he">אריזת מתנה מפוארת חינם לכל רכישה מעל 500₪</p>
+            <p class="text-gray-400 text-xl mb-16 reveal lang-fr">Emballage cadeau premium offert pour tout achat de plus de 500₪</p>
+            <p class="text-gray-400 text-xl mb-16 reveal lang-en">Premium gift wrapping free with every purchase over 500₪</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                <div class="glass p-8 text-center">
+                    <div class="text-4xl mb-4">🎁</div>
+                    <h4 class="text-white font-bold mb-2 lang-he">אריזה מפוארת חינם</h4>
+                    <h4 class="text-white font-bold mb-2 lang-fr">Emballage offert</h4>
+                    <h4 class="text-white font-bold mb-2 lang-en">Free wrapping</h4>
+                    <p class="text-gray-500 text-sm lang-he">אריזת מתנה יוקרתית לכל רכישה מעל 500₪</p>
+                    <p class="text-gray-500 text-sm lang-fr">Écrin de luxe pour tout achat de plus de 500₪</p>
+                    <p class="text-gray-500 text-sm lang-en">Luxury gift box for every purchase above 500₪</p>
+                </div>
+                <div class="glass p-8 text-center">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h4 class="text-white font-bold mb-2 lang-he">חריטה חינם</h4>
+                    <h4 class="text-white font-bold mb-2 lang-fr">Gravure offerte</h4>
+                    <h4 class="text-white font-bold mb-2 lang-en">Free engraving</h4>
+                    <p class="text-gray-500 text-sm lang-he">חריטת שם או תאריך על מוצרים נבחרים</p>
+                    <p class="text-gray-500 text-sm lang-fr">Gravure nom ou date sur une sélection de produits</p>
+                    <p class="text-gray-500 text-sm lang-en">Name or date engraving on selected products</p>
+                </div>
+                <div class="glass p-8 text-center">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h4 class="text-white font-bold mb-2 lang-he">ייעוץ אישי בחנות</h4>
+                    <h4 class="text-white font-bold mb-2 lang-fr">Conseil personnalisé</h4>
+                    <h4 class="text-white font-bold mb-2 lang-en">Personal consultation</h4>
+                    <p class="text-gray-500 text-sm lang-he">צוות מקצועי שיעזור לכם למצוא את המתנה המושלמת</p>
+                    <p class="text-gray-500 text-sm lang-fr">Notre équipe vous aide à trouver le cadeau parfait</p>
+                    <p class="text-gray-500 text-sm lang-en">Our team helps you find the perfect gift</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTRE HISTOIRE -->
+    <section class="py-24 px-6 lg:px-24">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <div class="aspect-[4/3] bg-gradient-to-br from-slate-900 to-black rounded-2xl border border-white/5 flex items-center justify-center">
+                    <span class="text-gray-700 text-sm italic text-center px-6">
+                        [Image Nano Banana: Vitrine Gold Time King George sublimée]
+                    </span>
+                </div>
+            </div>
+            <div class="reveal">
+                <h3 class="font-serif text-3xl text-gold mb-6 lang-he">60 שנות מצוינות</h3>
+                <h3 class="font-serif text-3xl text-gold mb-6 lang-fr">60 Ans d'Excellence</h3>
+                <h3 class="font-serif text-3xl text-gold mb-6 lang-en">60 Years of Excellence</h3>
+
+                <p class="text-gray-400 leading-relaxed mb-6 lang-he">גולד טיים הוקם ב-1966 ברחוב המלך ג'ורג' בירושלים. שלוש דורות של תשוקה לאבנים יקרות ושענות שוויצרית. משפחה אחת. חזון אחד. מסורת אחת של מצוינות.</p>
+                <p class="text-gray-400 leading-relaxed mb-6 lang-fr">Gold Time a été fondé en 1966 sur la rue King George à Jérusalem. Trois générations de passion pour les pierres précieuses et l'horlogerie suisse. Une famille. Une vision. Une tradition d'excellence.</p>
+                <p class="text-gray-400 leading-relaxed mb-6 lang-en">Gold Time was founded in 1966 on King George Street in Jerusalem. Three generations of passion for precious stones and Swiss watchmaking. One family. One vision. A tradition of excellence.</p>
+
+                <div class="flex flex-wrap gap-3 mt-6">
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">Longines</span>
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">Tissot</span>
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">Pandora</span>
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">Certina</span>
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">TAG Heuer</span>
+                    <span class="px-3 py-1 border border-gold/20 rounded-full text-gold text-[10px] uppercase tracking-widest">ORIS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOUTIQUES -->
+    <section class="py-24 px-6 bg-[#080808] border-t border-gold/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-3xl text-white uppercase tracking-wider mb-12 reveal">
+                <span class="lang-he">בקרו אותנו</span>
+                <span class="lang-fr">Rendez-nous visite</span>
+                <span class="lang-en">Visit us</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+                <div class="glass p-8 text-center">
+                    <div class="text-2xl mb-3">📍</div>
+                    <h4 class="text-white font-bold mb-1">King George 8</h4>
+                    <p class="text-gold text-sm mb-2">02-6255883</p>
+                    <p class="text-gray-500 text-xs lang-he">א'-ה' 09:00-19:00 | ו' 09:00-13:00</p>
+                    <p class="text-gray-500 text-xs lang-fr">Dim-Jeu 09h-19h | Ven 09h-13h</p>
+                    <p class="text-gray-500 text-xs lang-en">Sun-Thu 9am-7pm | Fri 9am-1pm</p>
+                </div>
+                <div class="glass p-8 text-center">
+                    <div class="text-2xl mb-3">📍</div>
+                    <h4 class="text-white font-bold mb-1">Kanyon Malha</h4>
+                    <p class="text-gold text-sm mb-2">02-6797989</p>
+                    <p class="text-gray-500 text-xs lang-he">א'-ה' 09:00-21:00 | ו' 09:00-14:00</p>
+                    <p class="text-gray-500 text-xs lang-fr">Dim-Jeu 09h-21h | Ven 09h-14h</p>
+                    <p class="text-gray-500 text-xs lang-en">Sun-Thu 9am-9pm | Fri 9am-2pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-lg mx-auto reveal">
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-he">חג חירות שמח</p>
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-fr">Joyeux Pessah</p>
+            <p class="text-gold text-xs uppercase tracking-[0.5em] mb-6 font-bold lang-en">Happy Passover</p>
+
+            <h3 class="text-3xl font-bold text-white mb-8 lang-he">כי יש רגעים שנמדדים בזהב</h3>
+            <h3 class="text-3xl font-bold text-white mb-8 lang-fr">Parce que certains moments se mesurent en or</h3>
+            <h3 class="text-3xl font-bold text-white mb-8 lang-en">Because some moments are measured in gold</h3>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+97226255883" class="bg-gold text-black px-8 py-4 font-black uppercase text-xs tracking-widest hover:bg-white transition-all">
+                    📞 02-6255883
+                </a>
+                <a href="https://wa.me/97226255883?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%A7%D7%95%D7%9C%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20%D7%A4%D7%A1%D7%97" class="border border-gold text-gold px-8 py-4 font-black uppercase text-xs tracking-widest hover:bg-gold/10 transition-all">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 text-center border-t border-gold/20">
+        <div class="font-serif text-gold/20 tracking-[1em] text-[8px] uppercase mb-4">Gold Time Jerusalem — Est. 1966</div>
+        <p class="text-gray-600 text-xs">© 2026 Gold Time Jerusalem. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+            ['he','fr','en'].forEach(l => {
+                const btn = document.getElementById('btn-'+l);
+                if (l === lang) { btn.classList.add('bg-gold','text-black'); btn.classList.remove('text-gold'); }
+                else { btn.classList.remove('bg-gold','text-black'); btn.classList.add('text-gold'); }
+            });
+        }
+
+        // Countdown to Pessah (April 12, 2026 at sundown ~18:30 Jerusalem)
+        function updateCountdown() {
+            const pessah = new Date('2026-04-12T18:30:00+03:00');
+            const now = new Date();
+            const diff = pessah - now;
+            if (diff <= 0) return;
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            document.getElementById('days').textContent = String(d).padStart(2,'0');
+            document.getElementById('hours').textContent = String(h).padStart(2,'0');
+            document.getElementById('mins').textContent = String(m).padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        // Scroll reveal
+        const reveal = () => document.querySelectorAll('.reveal').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('active');
+        });
+        window.addEventListener('scroll', reveal);
+        window.onload = reveal;
+    </script>
+</body>
+</html>
