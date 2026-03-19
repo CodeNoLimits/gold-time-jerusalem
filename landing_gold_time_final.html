@@ -347,7 +347,13 @@
         .portfolio-item.wide { grid-column: span 2; }
         
         @media (max-width: 768px) {
+            .portfolio-masonry {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 220px;
+                gap: 1rem;
+            }
             .portfolio-item.large, .portfolio-item.wide { grid-column: span 1; }
+            .portfolio-item.large, .portfolio-item.tall { grid-row: span 1; }
         }
 
         .portfolio-item img, .portfolio-item video {
@@ -514,6 +520,10 @@
             section { padding: 3rem 1.5rem; }
             .experience-grid { grid-template-columns: 1fr; }
             .experience-text h2 { text-align: center; }
+            .experience-glass { aspect-ratio: 3/4; max-width: 100%; }
+            .strategy-grid { grid-template-columns: 1fr; }
+            .strategy-card { padding: 1.5rem; }
+            .shapeshift-section h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
