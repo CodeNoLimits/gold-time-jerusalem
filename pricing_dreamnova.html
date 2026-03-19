@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="flow images and videos/_Sublime_this_picture_202603191608.jpeg">
+    <meta property="og:image" content="https://gold-time-jerusalem.vercel.app/flow%20images%20and%20videos/_Sublime_this_picture_202603191608.jpeg">
     <meta property="og:title" content="Gold Time Jerusalem — Plan de Transformation Digitale">
     <meta property="og:description" content="תכנית טרנספורמציה דיגיטלית מקיפה — DreamNova Consult Mars 2026">
     <title>Gold Time Jerusalem — תכנית טרנספורמציה דיגיטלית | DreamNova Consult</title>
@@ -113,12 +113,15 @@
         .nav-hamburger.active span:nth-child(2) { opacity: 0; }
         .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         @media (max-width: 768px) {
-            .nav-hamburger { display: flex; }
+            /* CRITICAL: Remove backdrop-filter from nav so position:fixed works on children */
+            .main-nav { backdrop-filter: none !important; background: rgba(10, 17, 40, 0.95) !important; }
+            .nav-hamburger { display: flex; z-index: 1001; position: relative; }
             .nav-links {
                 position: fixed !important;
                 top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
                 background: rgba(5, 5, 5, 0.98) !important;
-                backdrop-filter: blur(20px);
                 flex-direction: column !important;
                 justify-content: center !important;
                 align-items: center !important;
@@ -135,7 +138,6 @@
             .nav-links .lang-btn { font-size: 1rem !important; padding: 0.6rem 1.5rem !important; }
             .nav-logo { font-size: 1.2rem; z-index: 1001; position: relative; }
             .nav-divider { display: none !important; }
-            .nav-hamburger { z-index: 1001; position: relative; }
         }
         .lang-btn {
             background: rgba(212,175,55,0.15);
@@ -995,11 +997,11 @@
 <!-- SECTION 1: HERO -->
 <!-- ========================================== -->
 <section class="hero shape-shift-bg" id="hero">
-    <video class="shape-shift-item active" autoplay muted loop playsinline>
+    <video class="shape-shift-item active" autoplay muted loop playsinline aria-hidden="true">
         <source src="flow images and videos/Luxury_watch_and_202603191612.mp4" type="video/mp4">
     </video>
     <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Gold Time Luxury">
-    <video class="shape-shift-item" autoplay muted loop playsinline>
+    <video class="shape-shift-item" autoplay muted loop playsinline aria-hidden="true" preload="none">
         <source src="flow images and videos/Luxury_watch_mechanism_202603191615.mp4" type="video/mp4">
     </video>
 
@@ -1168,7 +1170,7 @@
 <!-- SECTION 4: GESTION MENSUELLE (RETAINER) -->
 <!-- ========================================== -->
 <section class="retainer-section shape-shift-bg" id="retainer">
-    <video class="shape-shift-item active" autoplay muted loop playsinline>
+    <video class="shape-shift-item active" autoplay muted loop playsinline aria-hidden="true">
         <source src="flow images and videos/Luxury_watch_mechanism_202603191615.mp4" type="video/mp4">
     </video>
 
@@ -1459,7 +1461,7 @@
 <!-- SECTION 8: CTA -->
 <!-- ========================================== -->
 <section class="cta-section shape-shift-bg" id="contact">
-    <video class="shape-shift-item active" autoplay muted loop playsinline>
+    <video class="shape-shift-item active" autoplay muted loop playsinline aria-hidden="true">
         <source src="flow images and videos/Luxury_watch_and_202603191612.mp4" type="video/mp4">
     </video>
     <img src="flow images and videos/_Sublime_this_picture_202603191608.jpeg" class="shape-shift-item" alt="Gold Time">
